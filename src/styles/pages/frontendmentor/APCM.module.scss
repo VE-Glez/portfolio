@@ -26,16 +26,25 @@ $Weight-bold: 700;
   width: 85%;
   border-radius: 8px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid:
+    "hero"
+    "body"
+    "moreInfo" / 1fr;
   flex-direction: column;
   overflow: hidden;
+  box-shadow: 0 0 5px rgba($color: $Grayish-Blue, $alpha: 0.2);
 
+  &__hero {
+    grid-area: hero;
+  }
   &__image {
     width: 100%;
   }
 
   &__body {
-    padding: 35px;
+    padding: 30px 30px 20px;
+    grid-area: body;
   }
 
   &__title {
@@ -53,18 +62,22 @@ $Weight-bold: 700;
   }
 }
 
+.moreInfo {
+  position: relative;
+  grid-area: moreInfo;
+}
+
 .author {
   display: flex;
   width: 100%;
-  height: 55px;
-  // border: 1px solid purple;
+  height: 65px;
   padding: 0 30px;
+  margin-bottom: 10px;
   justify-content: flex-start;
+  align-items: center;
   gap: 10px;
+  position: relative;
 
-  & > * {
-    // border: 1px solid greenyellow;
-  }
   &__image {
     width: 40px;
     border-radius: 50%;
@@ -86,11 +99,14 @@ $Weight-bold: 700;
     width: 35px;
     height: 35px;
     align-self: center;
-    margin-left: 18%;
     background-color: $Light-Grayish-Blue;
     padding: 8px;
     border-radius: 50%;
     border: none;
+    position: absolute;
+    right: 40px;
+    // top: 0;
+    z-index: 2;
 
     &:focus {
       outline: none;
@@ -104,31 +120,104 @@ $Weight-bold: 700;
 
 .icons {
   background-color: $Very-Dark-Grayish-Blue;
-  display: flex;
   width: 100%;
-  height: 55px;
-  // border: 1px solid rgb(255, 60, 255);
-  padding: 0 30px;
+  padding: 0 30px 10px;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
   color: $Grayish-Blue;
   display: none;
+  position: absolute;
+  height: 100%;
+  transform: translateY(-100%);
 
   &__word {
     letter-spacing: 6px;
   }
   &__container {
-    // border: 1px solid yellow;
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    padding-left: 5px;
   }
 }
 
-.authorHidden {
-  display: none;
+.showIcons {
+  display: flex;
 }
 
-.displayShare {
-  display: flex;
+.buttonChangeColor {
+  background-color: $Desaturated-Dark-Blue;
+
+  svg path {
+    fill: white;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    grid:
+      "hero body"
+      "hero moreInfo"/ 40% 60%;
+    max-width: 900px;
+    overflow: visible;
+
+    &__hero {
+      overflow: hidden;
+      height: 100%;
+      img {
+        width: 120%;
+      }
+    }
+    &__body {
+      padding: 60px 60px 20px 60px;
+    }
+
+    &__title {
+      font-size: 1.8em;
+    }
+
+    &__description {
+      font-size: 1.1em;
+      line-height: 1.8em;
+    }
+  }
+
+  .author {
+    padding: 0 60px;
+
+    &__image {
+      width: 50px;
+    }
+
+    &__name {
+      font-size: 1.5rem;
+    }
+
+    &__publication_date {
+      font-size: 1.4rem;
+    }
+  }
+
+  .icons {
+    border-radius: 10px;
+    right: 0;
+    width: auto;
+    height: 65px;
+    padding: 20px 60px;
+    margin: 0 auto;
+    transform: translate(30%, -270%);
+    box-shadow: 0 5px 5px rgba($color: $Light-Grayish-Blue, $alpha: 0.8);
+
+    &::before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      background-color: $Very-Dark-Grayish-Blue;
+      // border: 1px solid yellow;
+      position: absolute;
+      bottom: -15px;
+      right: 45%;
+      transform: rotate(45deg);
+    }
+  }
 }

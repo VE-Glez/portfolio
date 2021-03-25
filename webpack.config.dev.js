@@ -7,13 +7,13 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.[contenthash].js",
+    filename: "[name].[contenthash].js",
     publicPath: "/",
   },
   devServer: {
     port: 8080,
     open: true,
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "public"),
     historyApiFallback: true,
     // compress: true,
   },
@@ -31,19 +31,19 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: "html-loader",
+        use: ["html-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg)$/,
+        test: /\.(png|jpg|svg|jpeg)$/,
         type: "asset/resource",
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.s[ac]ss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
@@ -53,7 +53,7 @@ module.exports = {
       filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "./[name].css",
     }),
   ],
   devtool: "source-map",
