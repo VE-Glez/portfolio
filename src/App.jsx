@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import GeneralNavbar from "./components/GeneralNavbar";
+import Certifications from "./pages/Certifications";
 import ArticlePreviewComponentMaster from "./pages/frontendmentor/ArticlePreviewComponentMaster";
 import BaseApparelComingSoonMaster from "./pages/frontendmentor/BaseApparelComingSoonMaster";
 import CodingBootcampTestimonialsSliderMaster from "./pages/frontendmentor/CodingBootcampTestimonialsSliderMaster";
@@ -23,17 +25,20 @@ const routes = [
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/test" component={Test} />
-        <Route exact path="/projects" component={Projects} />
-        {routes.map(({ path, component }, key) => {
-          return <Route exact key={key} path={path} component={component} />;
-        })}
-        <Route component={NotFound} />
-      </Switch>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <GeneralNavbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/certifications" component={Certifications} />
+          <Route exact path="/projects" component={Projects} />
+          {routes.map(({ path, component }, key) => (
+            <Route exact key={key} path={path} component={component} />
+          ))}
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 };
 
