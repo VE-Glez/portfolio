@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+// Neutral
+$Very-Dark-Blue: hsl(234, 12%, 34%);
+$Grayish-Blue: hsl(229, 6%, 66%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+$Font-size: 15px;
+
+$Family: "Poppins";
+$Weights-light: 200;
+$Weights-normal: 400;
+$Weights-bold: 600;
+
+$border-top: 4px;
+
+@mixin topLine($color) {
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color;
+}
+
+.main {
+  background-color: $Very-Light-Gray;
+  min-height: 100vh;
+  padding: 0;
+  border: 1px solid $Very-Light-Gray;
+}
+
+.container {
+  width: 85%;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  font-size: $Font-size;
+  font-family: $Family;
+}
+
+.header {
+  text-align: center;
+  h1 {
+    color: $Grayish-Blue;
+    font-weight: $Weights-normal;
+  }
+
+  h2 {
+    color: $Very-Dark-Blue;
+  }
+
+  p {
+    margin-top: 20px;
+    text-align: center;
+    color: $Grayish-Blue;
+  }
+}
+
+.articles {
+  margin-top: 10%;
+  display: grid;
+  gap: 15px;
+  grid:
+    "supervisor"
+    "teamBuilder"
+    "karma"
+    "calculator" / 1fr;
+
+  article {
+    box-shadow: 0 5px 20px -10px rgba($color: $Grayish-Blue, $alpha: 1);
+    min-height: 160px;
+    border-radius: 8px;
+    padding: 20px;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+
+    h3 {
+      font-size: 1.1em;
+    }
+
+    p {
+      font-weight: $Weights-normal;
+      font-size: 0.9em;
+      color: $Grayish-Blue;
+    }
+
+    svg {
+      transform: scale(0.9);
+      justify-self: end;
+    }
+  }
+}
+
+.supervisor {
+  grid-area: supervisor;
+  &::before {
+    @include topLine($Cyan);
+  }
+}
+
+.teamBuilder {
+  grid-area: teamBuilder;
+  &::before {
+    @include topLine($Red);
+  }
+}
+
+.karma {
+  grid-area: karma;
+  &::before {
+    @include topLine($Orange);
+  }
+}
+
+.calculator {
+  grid-area: calculator;
+
+  &::before {
+    @include topLine($Blue);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header {
+    max-width: 50%;
+  }
+
+  .articles {
+    grid:
+      ". teamBuilder ."
+      "supervisor teamBuilder calculator"
+      "supervisor karma calculator"
+      ". karma . "/ 1fr 1fr 1fr;
+    margin: 0 auto 10%;
+    min-height: 50vh;
+  }
+}

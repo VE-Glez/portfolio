@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { SourceMapDevToolPlugin } = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -55,6 +56,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "./[name].css",
     }),
+    new SourceMapDevToolPlugin(),
   ],
-  devtool: "source-map",
+  devtool: false,
 };
