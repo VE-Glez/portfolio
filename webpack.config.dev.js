@@ -12,6 +12,7 @@ module.exports = {
     publicPath: "/",
   },
   devServer: {
+    host: "192.168.100.25",
     port: 8080,
     open: true,
     contentBase: path.join(__dirname, "public"),

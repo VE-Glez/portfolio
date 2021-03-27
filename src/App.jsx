@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ActiveLastBreadcrumb from "./components/ActiveLastBreadcrumb";
 import GeneralNavbar from "./components/GeneralNavbar";
 import Certifications from "./pages/Certifications";
 import ArticlePreviewComponentMaster from "./pages/frontendmentor/ArticlePreviewComponentMaster";
@@ -10,7 +11,6 @@ import IntroComponentSignupFormMaster from "./pages/frontendmentor/IntroComponen
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects";
-import Test from "./pages/Test";
 
 const routes = [
   { path: "/projects/ICSFM", component: IntroComponentSignupFormMaster },
@@ -28,6 +28,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <GeneralNavbar />
+        <ActiveLastBreadcrumb />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/certifications" component={Certifications} />
