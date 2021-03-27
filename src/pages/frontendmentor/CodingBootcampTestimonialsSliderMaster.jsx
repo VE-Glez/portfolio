@@ -8,8 +8,6 @@ const CodingBootcampTestimonialsSliderMaster = () => {
   const datos = data.results;
   const size = datos.length;
   const [index, setIndex] = useState(0);
-  console.log(datos[index]);
-  console.log("indes is: ", index);
 
   return (
     <div className={Styles.container}>

@@ -5,8 +5,7 @@ import { StyledForm, Msg } from "./styles";
 
 const Form = ({ className }) => {
   const handleSubmit = (e) => {
-    console.log(e.preventDefault());
-    console.log(e.target.checkValidity());
+    e.preventDefault();
   };
 
   return (

@@ -6,9 +6,9 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
-import data from "../../utils/projects.json";
 import { Link } from "react-router-dom";
-// import tileData from "./tileData";
+import data from "../../utils/projectsData.json";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 1024,
-    height: 900,
+    width: 500,
+    height: 700,
   },
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
@@ -57,7 +57,7 @@ export default function TitlebarGridList() {
         </GridListTile>
         {tileData.map((tile) => (
           <GridListTile key={tile.id} component={Link} to={tile.path}>
-            <img src={tile.img1} alt={tile.title} />
+            <img src={tile.desktop} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
               subtitle={<span>by: {tile.author}</span>}

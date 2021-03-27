@@ -1,10 +1,10 @@
 import React from "react";
 import TitlebarGridList from "../components/TitlebarGridList";
-
+import Styles from "../styles/pages/projects.module.scss";
 const Projects = () => {
   return (
     <div>
-      <h1>this is projects</h1>
+      <main className={Styles.container}></main>
       <TitlebarGridList />
     </div>
   );

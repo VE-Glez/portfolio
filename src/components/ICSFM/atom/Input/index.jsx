@@ -2,21 +2,22 @@ import React, { useState } from "react";
 import { Label, InputStyled, ErrorMessage, WrapperIconError } from "./styles";
 
 const Input = ({ type = "text", placeholder = "First Name", name }) => {
-  let customRegex, short;
+  let customRegex, short, autocompleteType;
   const [invalid, setInvalid] = useState(false);
 
   switch (type) {
     case "email":
       customRegex = "[\\w\\.-]+@[\\w-]+\\.[\\w-]{2,4}";
+      autocompleteType = "username";
       break;
-    case "passworda":
+    case "password":
       customRegex = "[\\w]+";
       short = 6;
+      autocompleteType = "current-password";
       break;
     case "tel":
       customRegex = "[0-9]{10}";
     default:
-      console.log("switch type is : ", type);
       customRegex = "[\\w]+";
       break;
   }
@@ -38,6 +39,7 @@ const Input = ({ type = "text", placeholder = "First Name", name }) => {
       <Label isValid={!invalid}>
         <InputStyled
           required
+          autoComplete={autocompleteType}
           type={type}
           min={short}
           placeholder={placeholder}

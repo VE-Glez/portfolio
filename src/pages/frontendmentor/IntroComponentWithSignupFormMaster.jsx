@@ -2,7 +2,7 @@ import React from "react";
 import ButtonPrice from "../../components/ICSFM/atom/ButtonPrice";
 import Form from "../../components/ICSFM/molecule/Form";
 import Styles from "../../styles/pages/frontendmentor/ICSFM.module.scss";
-const IntroComponentSignupFormMaster = () => {
+const IntroComponentWithSignupFormMaster = () => {
   return (
     <main className={Styles.container}>
       <section className={Styles.main}>
@@ -23,4 +23,4 @@ const IntroComponentSignupFormMaster = () => {
   );
 };
 
-export default IntroComponentSignupFormMaster;
+export default IntroComponentWithSignupFormMaster;
