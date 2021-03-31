@@ -1,10 +1,10 @@
 import Styles from "../../styles/pages/frontendmentor/APCM.module.scss";
 import avatar from "../../../public/frontendmentor/APCM/avatar-michelle.jpg";
 import hero from "../../../public/frontendmentor/APCM/drawers.jpg";
-import ShareButton from "../../components/APCM/ShareButton";
-import Facebook from "../../components/APCM/Facebook";
-import Twitter from "../../components/APCM/Twitter";
-import Pinterest from "../../components/APCM/Pinterest";
+import IconShare from "../../components/APCM/IconShare";
+import IconFacebook from "../../components/APCM/IconFacebook";
+import IconTwitter from "../../components/APCM/IconTwitter";
+import IconPinterest from "../../components/APCM/IconPinterest";
 import clsx from "clsx";
 import React, { useState } from "react";
 const ArticlePreviewComponentMaster = () => {
@@ -41,20 +41,20 @@ const ArticlePreviewComponentMaster = () => {
             </div>
             <button
               className={clsx(
-                Styles.author__shareButtonContainer,
+                Styles.author__IconShareContainer,
                 click && Styles.buttonChangeColor
               )}
               onClick={() => setClick(!click)}
             >
-              <ShareButton className={Styles.author__shareButton} />
+              <IconShare className={Styles.author__IconShare} />
             </button>
           </article>
           <article className={clsx(Styles.icons, click && Styles.showIcons)}>
             <div className={Styles.icons__word}>SHARE</div>
             <div className={Styles.icons__container}>
-              <Facebook className={Styles.icons_facebook} />
-              <Twitter className={Styles.icons_twitter} />
-              <Pinterest className={Styles.icons_pinterest} />
+              <IconFacebook className={Styles.icons_IconFacebook} />
+              <IconTwitter className={Styles.icons_IconTwitter} />
+              <IconPinterest className={Styles.icons_IconPinterest} />
             </div>
           </article>
         </section>

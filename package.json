@@ -36,6 +36,8 @@
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^5.0.0",
     "webpack": "^5.27.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"

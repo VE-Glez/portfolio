@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Styles from "../../styles/pages/frontendmentor/CBTSM.module.scss";
-import NextIcon from "../../components/CBTSM/NextIcon";
-import PrevIcon from "../../components/CBTSM/PrevIcon";
+import IconNext from "../../components/CBTSM/IconNext";
+import IconPrev from "../../components/CBTSM/IconPrev";
 import data from "../../../public/frontendmentor/CBTSM/data.json";
 
 const CodingBootcampTestimonialsSliderMaster = () => {
@@ -21,14 +21,14 @@ const CodingBootcampTestimonialsSliderMaster = () => {
                   index - 1 < 0 ? setIndex(size - 1) : setIndex(index - 1)
                 }
               >
-                <PrevIcon />
+                <IconPrev />
               </button>
               <button
                 onClick={() =>
                   index + 1 >= size ? setIndex(0) : setIndex(index + 1)
                 }
               >
-                <NextIcon />
+                <IconNext />
               </button>
             </div>
           </picture>

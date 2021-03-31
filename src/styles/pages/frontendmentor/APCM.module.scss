@@ -95,7 +95,7 @@ $Weight-bold: 700;
     margin-top: 2px;
   }
 
-  &__shareButtonContainer {
+  &__IconShareContainer {
     width: 35px;
     height: 35px;
     align-self: center;
@@ -138,6 +138,10 @@ $Weight-bold: 700;
     display: flex;
     gap: 15px;
     padding-left: 5px;
+
+    svg {
+      width: 20px;
+    }
   }
 }
 

@@ -13,7 +13,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <GeneralNavbar />
-        <ActiveLastBreadcrumb />
+        {/* <ActiveLastBreadcrumb /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/certifications" component={Certifications} />

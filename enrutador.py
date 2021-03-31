@@ -7,7 +7,7 @@ os.chdir('/home/veglez/Projects/frontend/frontendmentor')
 
 ruta_portafolio = Path('/home/veglez/Projects/portfolio/with-react')
 dinamicImport = 'import {0} from "../pages/frontendmentor/{0}"'
-
+dinamic_page_imports= ''
 
 
 
@@ -19,14 +19,96 @@ rutas = {
     #"key": (import, component, path),
 }
 
+
+def createPageComponent(name_of_page_component, dinamic_page_imports, stylesheet_acronnym, mainText):
+    component_layout = '''
+    import React from "react";
+    import Styles from "{style}";
+    {icons}
+    
+    const {component_name} = () => {{
+    return(
+            <main className={{Styles.container}}>
+            <h1> Estas en la página {component_name} </h1>
+            <section>{mainContent}</section>
+            </main>
+        );
+    }};
+    
+    export default {component_name};'''.format(component_name=name_of_page_component, icons=dinamic_page_imports, style='../../styles/pages/frontendmentor/{0}.module.scss'.format(stylesheet_acronnym), mainContent=mainText)
+    #esto se repite para producion tambien pero verificar si ya existe para no sobreescribirlos
+    output_to_local = Path(actual, 'outputTree/src/pages/frontendmentor')
+    if not output_to_local.exists():
+        output_to_local.mkdir(parents=True)
+    output_to_local = output_to_local.joinpath(name_of_page_component+'.jsx')
+    if not output_to_local.exists():
+        print("No existe {0}, se está creando por primera vez".format(output_to_local))
+        with open(output_to_local,'w') as page:
+            page.write(component_layout)
+    stylesheet_to_local = Path(actual, 'outputTree/src/styles/pages/frontendmentor')
+    if not stylesheet_to_local.exists():
+        stylesheet_to_local.mkdir(parents=True)
+    stylesheet_to_local = stylesheet_to_local.joinpath(stylesheet_acronnym+'.module.scss')
+    if not stylesheet_to_local.exists():
+        print('No existe {0}, se está creando por primera vez'.format(stylesheet_to_local))
+        stylesheet_to_local.touch()
+    #esto se repite para producion tambien pero verificar si ya existe para no sobreescribirlos
+    output_to_portfolio = Path(ruta_portafolio, 'src/pages/frontendmentor')
+    if not output_to_portfolio.exists():
+        output_to_portfolio.mkdir(parents=True)
+    output_to_portfolio = output_to_portfolio.joinpath(name_of_page_component+'.jsx')
+    if not output_to_portfolio.exists():
+        print("No existe {0}, se está creando por primera vez".format(output_to_portfolio))
+        with open(output_to_portfolio,'w') as page:
+            page.write(component_layout)
+    stylesheet_to_portfolio = Path(ruta_portafolio, 'src/styles/pages/frontendmentor')
+    if not stylesheet_to_portfolio.exists():
+        stylesheet_to_portfolio.mkdir(parents=True)
+    stylesheet_to_portfolio = stylesheet_to_portfolio.joinpath(stylesheet_acronnym+'.module.scss')
+    if not stylesheet_to_portfolio.exists():
+        print('No existe {0}, se está creando por primera vez'.format(stylesheet_to_portfolio))
+        stylesheet_to_portfolio.touch()
+
+
+def replaceRegex(text):
+    beforeWidth = 'beforeWidth'
+    widthHeight = 'widthHeight'
+    widthValue = 'widthValue'
+    heightValue = 'heightValue'
+    viewbox = 'viewbox'
+    viewboxValue= 'viewboxValue'
+    patronWidthHeight = r'(?:<svg[\w\/\-}=:"{\.\s]+)(?P<widthHeight>width="(?P<widthValue>[\d\.]+)"\s+height="(?P<heightValue>[\d\.]+)")|(?P<viewbox>viewbox="(?P<viewboxValue>[\w\.\s]+)")'
+    patternWidthHeight = re.compile(patronWidthHeight)
+    matchWidthHeight = patternWidthHeight.search(text)
+    vhStart, vhEnd = matchWidthHeight.span(widthHeight)
+    wvStart, wvEnd = matchWidthHeight.span(widthValue)
+    wStart,wEnd = matchWidthHeight.span(widthValue)
+    hStart, hEnd = matchWidthHeight.span(heightValue)
+    beforeWH = text[:vhStart]
+    afterWH = text[vhEnd: ]
+    newText = 'preserveAspectRatio="xMinYMin slice" viewBox="0 0 {width} {height}"'.format(width=text[wStart:wEnd], height=text[hStart:hEnd])
+    # print(newText)
+    #empieza verificacion del viewbox
+    # patronViewbox = r'(?:<svg[\w\/\-}=:"{\.\s]+)(?P<viewbox>viewbox="(?P<viewboxValue>[\w\.\s]+)")'
+    # patternViewbox = re.compile(patronViewbox)
+    # matchViewbox = patternViewbox.search(text)
+    return beforeWH+newText+afterWH
+
+
 def HTML_to_React_attributes(svg):
+    svg = replaceRegex(svg)
     pattern = re.compile(r'([a-z]+-[a-z]+)')
-    attrs = pattern.findall(svg)
-    if attrs:
-        for attr in attrs:
-            init, *parts= attr.split('-') 
-            camelCase = ''.join([init, *map(str.capitalize, parts)])
-            svg = svg.replace(attr, camelCase)
+    pattern1= re.compile(r'([a-z]+:[a-z]+)')
+    patterns = [(pattern,'-'), (pattern1,':')]
+    for p in patterns:
+        attrs = p[0].findall(svg)
+        if attrs:
+            attrs = set(attrs)
+            for attr in attrs:
+                init, *parts= attr.split(p[1]) 
+                camelCase = ''.join([init, *map(str.capitalize, parts)])
+                svg = svg.replace(attr, camelCase)
+    svg = svg.replace('<svg', '<svg className={{className}}'.format('className'))
     return svg
 
 
@@ -37,38 +119,54 @@ def createSVGJSX(image, root, acronnym ):
     with open(svg_file, 'r') as svg:
         tags = svg.read()
     tags = HTML_to_React_attributes(tags)
-    svg_layout = """import React from 'react'
+    svg_layout = """import React from "react";
             
-const {PascalNameSVG} () =>{{
-    {contenidoSVG}
-}};
+    const {PascalNameSVG} = ({{className}}) =>{{
+    return(
+        {contenidoSVG}
+    )
+    }};
 
-export default {PascalNameSVG};"""
+    export default {PascalNameSVG};"""
     output_to_local = Path.cwd().joinpath('outputTree','src/components', acronnym)
     if not output_to_local.exists():
         output_to_local.mkdir(parents=True)
     file_output = output_to_local.joinpath(PascalCaseFullSvgName+'.jsx')
     with open(file_output, 'w') as thisJSX:
         thisJSX.write(svg_layout.format(PascalNameSVG = PascalCaseFullSvgName, contenidoSVG = tags))
-    output_to_portfolio = Path(ruta_portafolio,'src/components',acronnym, PascalCaseFullSvgName+'.jsx')
-    if output_to_portfolio.exists():
-        print("ya existe: {}".format(output_to_portfolio))
-    # else:
-    #     # print("no existe: {}".format(output_to_portfolio))
-    #     pass
+    output_to_portfolio = Path(ruta_portafolio,'src/components',acronnym)
+    if not output_to_portfolio.exists():
+        output_to_portfolio.mkdir(parents=True)
+    output_to_portfolio= output_to_portfolio.joinpath(PascalCaseFullSvgName+'.jsx')
+    if not output_to_portfolio.exists():
+        print("Este archivo es nuevo {0}. Recuerda todos se estan copiando de nuevo".format(output_to_portfolio))
+    copyfile(file_output, output_to_portfolio)
+    return PascalCaseFullSvgName
+
 
 for root, dirs, files in os.walk('./'):
-    item = {}         #projectsData.json
+    item = {}         
     if isProject.search(root):
         # print(root, dirs)
-        project_Acronym = ''    #projectsData.json
+        project_Acronym = ''    
         projectName = root.split('/')[1].split('-') 
         capitalizedProjectName = ' '.join(map(lambda x: x.capitalize(), projectName ))
         # print(capitalizedProjectName)
         component_name = capitalizedProjectName.replace(' ', '')
         for word in projectName:
             project_Acronym += word[0].upper()
-        print(project_Acronym)
+        for indexFile in files:
+            if 'html' in indexFile:
+                mainFile = Path(root, indexFile)
+                mainText = mainFile.read_text()
+                # print(mainFile)
+                mainContent = re.search(r'<body>\s*(?P<content>[\w\s\-\.\'!,+?“”’"@:\/]+)',mainText)
+                if mainContent:
+                    print(root, indexFile)
+                mainText = mainText[mainContent.span('content')[0]: mainContent.span('content')[1]]
+                print(mainText)
+        # print(project_Acronym)
+        
     if 'design' in root:
         for img in files:
             if pFiles.search(img):
@@ -93,13 +191,45 @@ for root, dirs, files in os.walk('./'):
         results.append(item)
         rutas[project_Acronym] = (dinamicImport.format(component_name), component_name, '/projects/{0}'.format(project_Acronym) )
     if 'images' in root:
+        dinamic_page_imports=''
         for image in files:
             if 'favicon' not in image:
                 # print( image)
                 if image[-3:] == 'svg' and 'bg' not in image:
-                    createSVGJSX(image, root, project_Acronym)
-                # else:
-                #     copyfile()
+                    imageNameInit, *rest = image[:-4].split('-') 
+                    camelCaseName = ''.join([imageNameInit, *map(lambda x: x.capitalize(), rest )])
+                    # page_name = createSVGJSX(image, root, project_Acronym)
+                    dinamic_page_imports += 'import {name} from "../../../public/frontendmentor/{acronnym}/{original}";\n'.format(name=camelCaseName, acronnym = project_Acronym, original = image)
+                    src = Path.joinpath(actual, root, image)
+                    output_to_local = Path(actual, 'outputTree/public/frontendmentor', project_Acronym)
+                    if not output_to_local.exists():
+                        output_to_local.mkdir(parents=True)
+                    output_to_local = output_to_local.joinpath(image)
+                    copyfile(src, output_to_local)
+                    output_to_portfolio = Path(ruta_portafolio, 'public/frontendmentor', project_Acronym)
+                    if not output_to_portfolio.exists():
+                        output_to_portfolio.mkdir(parents=True)
+                    output_to_portfolio = output_to_portfolio.joinpath(image)
+                    copyfile(src, output_to_portfolio)
+                else:
+                    src = Path.joinpath(actual, root, image)
+                    output_to_local = Path(actual, 'outputTree/public/frontendmentor', project_Acronym)
+                    if not output_to_local.exists():
+                        output_to_local.mkdir(parents=True)
+                    output_to_local = output_to_local.joinpath(image)
+                    copyfile(src, output_to_local)
+                    output_to_portfolio = Path(ruta_portafolio, 'public/frontendmentor', project_Acronym)
+                    if not output_to_portfolio.exists():
+                        output_to_portfolio.mkdir(parents=True)
+                    output_to_portfolio = output_to_portfolio.joinpath(image)
+                    copyfile(src, output_to_portfolio)
+        #aqui funciona la variable component_name
+        # print(component_name)
+        createPageComponent(component_name, dinamic_page_imports, project_Acronym, mainText)
+
+        
+
+
 
 
 

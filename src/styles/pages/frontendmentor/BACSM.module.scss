@@ -19,20 +19,21 @@ $Weights-bold: 600;
   display: grid;
   gap: 10px;
   grid:
-    "header" 10%
-    "hero" 35%
-    "section" 55%/1fr;
+    "header" 80px
+    "hero" 240px
+    "section" /1fr;
   justify-items: center;
   background-image: $Grad1;
 }
 
 .header {
-  padding: 40px 20px;
+  padding: 20px 5vw;
   justify-self: start;
   grid-area: header;
 
   svg {
-    transform: scale(0.75);
+    width: 158px;
+    height: 33px;
   }
 }
 
@@ -44,8 +45,13 @@ $Weights-bold: 600;
   }
 }
 .section {
+  padding: 20px 12px;
   text-align: center;
   grid-area: section;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 
   h1 {
     font-size: 2.5em;
@@ -63,7 +69,7 @@ $Weights-bold: 600;
 
 .section_p {
   color: $Desaturated-Red;
-  padding: 30px 18px;
+  // padding: 30px 18px;
   line-height: 1.5em;
 }
 
@@ -71,7 +77,7 @@ $Weights-bold: 600;
   position: relative;
   display: inline-block;
   background: transparent;
-  width: 70%;
+  width: 100%;
   padding: 15px;
   border-radius: 25px;
   border: 1px solid $Desaturated-Red;
@@ -108,12 +114,17 @@ $Weights-bold: 600;
   &:focus {
     outline: none;
   }
+
+  svg {
+    width: 12px;
+  }
 }
 
 .iconError {
+  width: 24px;
   position: absolute;
   top: 50%;
-  right: 20%;
+  right: 50px;
   transform: translateY(-50%);
 }
 
@@ -130,24 +141,18 @@ $Weights-bold: 600;
 @media screen and (min-width: 1440px) {
   .container {
     grid:
-      ". . hero" 1fr
-      ". header hero" 1fr
-      ". . hero" 1fr
-      ". section hero" 1fr
-      ". section hero" 1fr
-      ". section hero" 1fr
-      ". section hero" 1fr
-      ". section hero" 1fr
-      ". section hero" 1fr
-      ". . hero" 1fr/15% 40% 40%;
+      ". header hero" 20vh
+      ". section hero" 40vh
+      ". section hero" 40vh/15% 40% 40%;
     align-content: flex-end;
     background-image: url("../../../../public/frontendmentor/BACSM/bg-pattern-desktop.svg"),
       $Grad1;
     background-size: contain;
   }
 
-  .header svg {
-    transform: scale(1);
+  .header {
+    padding-left: 0;
+    align-self: center;
   }
   .picture {
     width: 100%;
@@ -161,15 +166,20 @@ $Weights-bold: 600;
     justify-items: flex-start;
     text-align: start;
     padding-right: 100px;
+    gap: 20px;
 
     h1 {
       font-size: 4em;
     }
     p {
-      padding-right: 150px;
+      padding-right: 20px;
     }
   }
 
+  .form {
+    width: 90%;
+    align-self: flex-start;
+  }
   .emailInput:invalid {
     border: 2px solid $Soft-Red;
   }

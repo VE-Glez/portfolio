@@ -98,7 +98,9 @@ $border-top: 4px;
     }
 
     svg {
-      transform: scale(0.9);
+      width: 64px;
+      height: 64px;
+      // transform: scale(0.9);
       justify-self: end;
     }
   }
@@ -134,7 +136,7 @@ $border-top: 4px;
 }
 
 @media screen and (min-width: 1440px) {
-  header {
+  .header {
     max-width: 50%;
   }
 
