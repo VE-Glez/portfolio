@@ -28,13 +28,14 @@ def createPageComponent(name_of_page_component, dinamic_page_imports, stylesheet
     
     const {component_name} = () => {{
     return(
-            <main className={{Styles.container}}>
+            <div className={{Styles.container}}>
             <h1> Estas en la página {component_name} </h1>
             <section>{mainContent}</section>
-            </main>
+            </div>
         );
     }};
     
+
     export default {component_name};'''.format(component_name=name_of_page_component, icons=dinamic_page_imports, style='../../styles/pages/frontendmentor/{0}.module.scss'.format(stylesheet_acronnym), mainContent=mainText)
     #esto se repite para producion tambien pero verificar si ya existe para no sobreescribirlos
     output_to_local = Path(actual, 'outputTree/src/pages/frontendmentor')
@@ -199,6 +200,7 @@ for root, dirs, files in os.walk('./'):
                     imageNameInit, *rest = image[:-4].split('-') 
                     camelCaseName = ''.join([imageNameInit, *map(lambda x: x.capitalize(), rest )])
                     # page_name = createSVGJSX(image, root, project_Acronym)
+                    # dinamic_page_imports += 'import {name} from "../../components/{acronnym}/{name}";\n'.format(name=camelCaseName, acronnym = project_Acronym)
                     dinamic_page_imports += 'import {name} from "../../../public/frontendmentor/{acronnym}/{original}";\n'.format(name=camelCaseName, acronnym = project_Acronym, original = image)
                     src = Path.joinpath(actual, root, image)
                     output_to_local = Path(actual, 'outputTree/public/frontendmentor', project_Acronym)
@@ -242,7 +244,7 @@ json_output = Path.joinpath(actual, 'outputTree', filename_json)
 with open(json_output, 'w') as f:
     json.dump({"results": results}, f)
 output_path_to_porfolio_json = Path(ruta_portafolio,'src/utils',filename_json)
-# copyfile(json_output, output_path_to_porfolio_json)
+copyfile(json_output, output_path_to_porfolio_json)
 
 imports = ''
 variable = ''
@@ -257,7 +259,7 @@ with open(routes_file, 'w') as routesFile:
     final_text = "{0}\nconst routes = [\n{1}];\n\nexport default routes;".format(imports, variable)
     routesFile.write(final_text)
 output_path_to_porfolio_routes = Path(ruta_portafolio,'src/utils',filename_routes)
-# copyfile(routes_file, output_path_to_porfolio_routes)
+copyfile(routes_file, output_path_to_porfolio_routes)
 
 
 # HASTA AQUI LO QUE SUCEDE ES:

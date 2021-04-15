@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap');
 $offset: 90%;
 $pink: hsl(322, 100%, 66%);
 $light-pink: hsl(321, 100%, 78%);
@@ -8,7 +8,7 @@ $white: hsl(207, 100%, 98%);
   min-height: 100vh;
   font-size: 15px;
   color: hsl(192, 100%, 9%);
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
 }
 
 .wrapper {
@@ -16,12 +16,12 @@ $white: hsl(207, 100%, 98%);
   // padding: 20px 5vw;
   gap: 40px 40px;
   grid:
-    "header"
-    "hero"
-    "main"
-    "section1"
-    "section2"
-    "section3" / 100%;
+    'header'
+    'hero'
+    'main'
+    'section1'
+    'section2'
+    'section3' / 100%;
   place-items: center;
 }
 
@@ -70,7 +70,7 @@ $white: hsl(207, 100%, 98%);
   align-items: center;
   gap: 40px;
   h1 {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.7em;
   }
@@ -103,13 +103,13 @@ $white: hsl(207, 100%, 98%);
     }
 
     h2 {
-      font-family: "Poppins";
+      font-family: 'Poppins';
       font-size: 5.5em;
     }
 
     p {
       text-align: center;
-      font-family: "Open sans";
+      font-family: 'Open sans';
       font-weight: 400;
       font-size: 1em;
       filter: grayscale(0.1);
@@ -151,48 +151,52 @@ $white: hsl(207, 100%, 98%);
     }
 
     &:first-child::before {
-      content: "";
+      content: '';
       width: 100%;
       height: 50px;
       position: absolute;
       top: -50px;
       left: 0;
-      background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-section-top-mobile-1.svg");
+      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-top-mobile-1.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
+      z-index: 1;
     }
     &:first-child::after {
-      content: "";
+      content: '';
       width: 100%;
       height: 50px;
       position: absolute;
       bottom: -50px;
       left: 0;
-      background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-mobile-1.svg");
+      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-mobile-1.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
+      z-index: 1;
     }
     &:last-child::before {
-      content: "";
+      content: '';
       width: 100%;
       height: 50px;
       position: absolute;
       top: -50px;
       left: 0;
-      background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-section-top-mobile-2.svg");
+      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-top-mobile-2.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
+      z-index: 1;
     }
     &:last-child::after {
-      content: "";
+      content: '';
       width: 100%;
       height: 50px;
       position: absolute;
       bottom: -50px;
       left: 0;
-      background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-mobile-2.svg");
+      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-mobile-2.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
+      z-index: 1;
     }
   }
 }
@@ -218,15 +222,16 @@ $white: hsl(207, 100%, 98%);
     color: $white;
     background-color: #0a252e;
     &::before {
-      content: "";
+      content: '';
       width: 100%;
       height: 50px;
       position: absolute;
       top: -50px;
       left: 0;
-      background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-footer-top-mobile.svg");
+      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-footer-top-mobile.svg');
       background-repeat: no-repeat;
       background-size: 100% 100%;
+      z-index: 1;
     }
   }
 }
@@ -351,17 +356,17 @@ $white: hsl(207, 100%, 98%);
       padding: 0 10%;
 
       &:first-child::after {
-        background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-desktop-1.svg");
+        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-desktop-1.svg');
       }
 
       &:first-child::before {
-        background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-section-top-desktop-1.svg");
+        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-top-desktop-1.svg');
       }
       &:last-child::after {
-        background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-desktop-2.svg");
+        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-desktop-2.svg');
       }
       &:last-child::before {
-        background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-section-top-desktop-2.svg");
+        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-top-desktop-2.svg');
       }
 
       img {
@@ -395,7 +400,7 @@ $white: hsl(207, 100%, 98%);
       flex-direction: row-reverse;
       justify-content: center;
       &::before {
-        background-image: url("../../../../public/frontendmentor/HLPWCSM/bg-footer-top-desktop.svg");
+        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-footer-top-desktop.svg');
         height: 100px;
         background-repeat: no-repeat;
         top: -100px;
