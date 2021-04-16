@@ -69,6 +69,7 @@ export default function MyNavbar() {
             <span className={classes.grow}></span>
             <Hidden mdDown>
               <NavigationLinks
+                key='desktopNablinks'
                 setIsOpen={setIsOpen}
                 device='desktop'
                 dense={true}

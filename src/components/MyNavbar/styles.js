@@ -15,10 +15,23 @@ export const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
   },
   collapse: {
+    boxShadow: theme.shadows[2],
+    background: theme.palette.grey[200],
+    '&:focus': {
+      outline: 'none',
+      padding: 50,
+    },
+  },
+  collapseDesktop: {
     position: 'absolute',
     top: 60,
     zIndex: 10,
     background: theme.palette.grey[600],
+  },
+  wrapperDesktopNavbar: {
+    position: 'relative',
+    display: 'flex',
+    gap: '1rem',
   },
   toolbar: {
     // ...theme.mixins.toolbar,
