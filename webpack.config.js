@@ -34,6 +34,10 @@ module.exports = {
         type: 'asset/resource',
       },
       {
+        test: /\.pdf$/i,
+        use: [{ loader: 'file-loader' }],
+      },
+      {
         test: /\.html$/,
         use: 'html-loader',
       },
