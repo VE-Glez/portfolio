@@ -79,6 +79,7 @@ export default function NavigationLinks({
       return !item.nested ? (
         //si la lista no tiene elementos anidados
         <ListItem
+          autoFocus
           key={uuidv4()}
           button
           component={Link}
@@ -111,6 +112,7 @@ export default function NavigationLinks({
             }
           >
             <ListItem
+              autoFocus
               key={uuidv4()}
               button
               divider={device == 'mobile' ? true : false}
@@ -156,6 +158,7 @@ export default function NavigationLinks({
             <List key={uuidv4()}>
               {item.nested.map((nestedItem) => (
                 <ListItem
+                  autoFocus
                   key={uuidv4()}
                   tabIndex='0'
                   button
@@ -165,7 +168,7 @@ export default function NavigationLinks({
                   data-src={nestedItem.targetId}
                   ref={scrolledTagRef}
                   onClick={handleClick}
-                  onBlur={handleInnerBlur}
+                  // onBlur={handleInnerBlur}
                   className={
                     device === 'mobile'
                       ? classes.listMobile

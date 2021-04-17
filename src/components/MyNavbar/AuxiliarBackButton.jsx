@@ -6,7 +6,7 @@ import { useStyles } from './styles';
 
 export default function AuxiliarBackButton() {
   const history = useHistory();
-  const classes = useStyles;
+  const classes = useStyles();
   const [route, setRoute] = useState('/');
   const [diff, setDiff] = useState(0);
   const deep = route.split('/').length;
@@ -31,13 +31,13 @@ export default function AuxiliarBackButton() {
     });
   }, [history]);
 
-  return (
-    <div className={classes.toolbar}>
-      {deep > 2 && (
-        <IconButton onClick={handleBack}>
-          <ArrowBack />
-        </IconButton>
-      )}
+  return deep > 2 ? (
+    <div onClick={handleBack} className={classes.toolbar}>
+      <IconButton>
+        <ArrowBack />
+      </IconButton>
     </div>
+  ) : (
+    <div></div>
   );
 }

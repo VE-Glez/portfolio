@@ -4,11 +4,11 @@ import { makeStyles, fade } from '@material-ui/core/styles';
 export const useStyles = makeStyles((theme) => ({
   listMobile: {
     width: 200,
-    fontSize: theme.typography.h3.fontSize,
+    // fontSize: theme.typography.h3.fontSize,
   },
   listDesktop: {
-    width: 140,
-    fontSize: theme.typography.h3.fontSize,
+    // width: 140,
+    // fontSize: theme.typography.h3.fontSize,
   },
   linkIcon: {
     minWidth: 40,
@@ -35,7 +35,12 @@ export const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     // ...theme.mixins.toolbar,
-    background: theme.palette.background.paper,
+    // background: theme.palette.background.paper,
+    cursor: 'pointer',
+    background: theme.palette.grey[200],
+    '&:hover': {
+      background: theme.palette.grey[300],
+    },
   },
   grow: {
     flexGrow: 1,

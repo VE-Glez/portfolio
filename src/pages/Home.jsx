@@ -1,93 +1,94 @@
 import React, { useState } from 'react';
-import { Typography, Container } from '@material-ui/core';
-import BackToTop from '../components/BackToTop';
+import {
+  Typography,
+  Container,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  CardMedia,
+} from '@material-ui/core';
+import Styles from '../styles/pages/home.module.scss';
+import robotic from '../assets/images/free-robot.jpg';
+import IA from '../assets/images/artificial-intelligence.png';
+import adn from '../assets/images/adn2.jpg';
 
 const Home = () => {
   return (
     <>
-      <Container>
-        <Typography>This is home main content</Typography>
-      </Container>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((el) => (
-        <Typography variant='h2' key={el}>
-          Regna terrae, cantate Deo, psallite Domino qui fertis super caelum
-          caeli ad Orientem Ecce dabit voci Suae vocem virtutis, tribuite
-          virtutem Deo. Exorcizamus te, omnis immundus spiritus omnis satanica
-          potestas, omnis incursio infernalis adversarii, omnis legio, omnis
-          congregatio et secta diabolica. Ergo draco maledicte et omnis legio
-          diabolica adjuramus te. cessa decipere humanas creaturas, eisque
-          aeternae Perditionis venenum propinare. Vade, Satana, inventor et
-          magister omnis fallaciae, hostis humanae salutis. Humiliare sub
-          potenti manu dei, contremisce et effuge, invocato a nobis sancto et
-          terribili nomine, quem inferi tremunt. Ab insidiis diaboli, libera
-          nos, Domine. Ut Ecclesiam tuam secura tibi facias libertate servire,
-          te rogamus, audi nos. Ut inimicos sanctae Ecclesiae humiliare
-          digneris, te rogamus, audi nos. Ut inimicos sanctae Ecclesiae te
-          rogamus, audi nos. Terribilis Deus de sanctuario suo. Deus Israhel
-          ipse truderit virtutem et fortitudinem plebi Suae. Benedictus Deus.
-          Gloria Patri. English Translation: Kingdoms of the Earth, sing unto
-          God, Praises to the Lord that carry above the sky of heaven to the
-          East. Behold, He sends forth His Own Voice, the Voice of Virtue.
-          Attribute the Virtue to God. We exorcise you, every impure spirit,
-          every satanic power, every incursion of the infernal adversary, every
-          legion, every congregation and diabolical sect. Thus, cursed demon and
-          every diabolical legion, we adjure you. Cease to deceive human
-          creatures, and to give to them the Poison of Eternal Perdition. Go
-          away, Satan, inventor and master of all deceit, enemy of humanity's
-          salvation. Be humble under the Powerful Hand of God -- tremble and
-          flee -- I invoke by us the Sacred and Terrible Name at which those
-          down below tremble. From the snares of the devil, free us, Lord. So
-          that You may make Your Church safe to serve You freely we ask You,
-          hear us. So that You may destroy the enemies of Your Sacred Church, we
-          ask You, hear us! That ... the enemies of Your Sacred Church we ask
-          You, hear us! God is frightening about His Own sacred place. The God
-          of Israel Himself will have thrust excellence and strength to His Own
-          people. Blessed be God. Glory be to the Father.
-        </Typography>
-      ))}
-      <h1 id='technologies'>
-        <strong>Technologies</strong>
-      </h1>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((el) => (
-        <Typography variant='h2' key={el * 12}>
-          Regna terrae, cantate Deo, psallite Domino qui fertis super caelum
-          caeli ad Orientem Ecce dabit voci Suae vocem virtutis, tribuite
-          virtutem Deo. Exorcizamus te, omnis immundus spiritus omnis satanica
-          potestas, omnis incursio infernalis adversarii, omnis legio, omnis
-          congregatio et secta diabolica. Ergo draco maledicte et omnis legio
-          diabolica adjuramus te. cessa decipere humanas creaturas, eisque
-          aeternae Perditionis venenum propinare. Vade, Satana, inventor et
-          magister omnis fallaciae, hostis humanae salutis. Humiliare sub
-          potenti manu dei, contremisce et effuge, invocato a nobis sancto et
-          terribili nomine, quem inferi tremunt. Ab insidiis diaboli, libera
-          nos, Domine. Ut Ecclesiam tuam secura tibi facias libertate servire,
-          te rogamus, audi nos. Ut inimicos sanctae Ecclesiae humiliare
-          digneris, te rogamus, audi nos. Ut inimicos sanctae Ecclesiae te
-          rogamus, audi nos. Terribilis Deus de sanctuario suo. Deus Israhel
-          ipse truderit virtutem et fortitudinem plebi Suae. Benedictus Deus.
-          Gloria Patri. English Translation: Kingdoms of the Earth, sing unto
-          God, Praises to the Lord that carry above the sky of heaven to the
-          East. Behold, He sends forth His Own Voice, the Voice of Virtue.
-          Attribute the Virtue to God. We exorcise you, every impure spirit,
-          every satanic power, every incursion of the infernal adversary, every
-          legion, every congregation and diabolical sect. Thus, cursed demon and
-          every diabolical legion, we adjure you. Cease to deceive human
-          creatures, and to give to them the Poison of Eternal Perdition. Go
-          away, Satan, inventor and master of all deceit, enemy of humanity's
-          salvation. Be humble under the Powerful Hand of God -- tremble and
-          flee -- I invoke by us the Sacred and Terrible Name at which those
-          down below tremble. From the snares of the devil, free us, Lord. So
-          that You may make Your Church safe to serve You freely we ask You,
-          hear us. So that You may destroy the enemies of Your Sacred Church, we
-          ask You, hear us! That ... the enemies of Your Sacred Church we ask
-          You, hear us! God is frightening about His Own sacred place. The God
-          of Israel Himself will have thrust excellence and strength to His Own
-          people. Blessed be God. Glory be to the Father.
-        </Typography>
-      ))}
-      <h1 id='about-me'>
-        <strong>About me</strong>
-      </h1>
+      <Grid container xl justify='center' style={{ textAlign: 'center' }}>
+        <Grid item xs={12}>
+          <Typography variant='h2' component='h1'>
+            <strong>
+              Valentín Eduardo <br />
+              González Morales
+            </strong>
+          </Typography>
+          <Typography variant='h6' component='p'>
+            Te doy la bienvenida a mi página web
+          </Typography>
+        </Grid>
+        <Grid item md={10}>
+          <Typography variant='h2' id='about-me'>
+            <strong>Sobre mí</strong>
+          </Typography>
+          <Typography align='justify'>
+            Soy ingeniero en mecatrónica con pasión por la automatización.
+            Considero que el uso de la tecnología es el medio por el cual
+            podremos tener un mejor estilo de vida por ello es importante para
+            mi desarrollar tecnologías que puedan servirnos en nuestras
+            actividades cotidianas.
+          </Typography>
+          <Typography align='justify'>
+            Cada vez que debo realizar una tarea a computadora, siempre
+            considero la opción de automatizar parte de la tarea con un script,
+            y si el coste{' '}
+            <code>tiempo-creación-script &lt;&lt; tarea asignada</code> entonces
+            genero un script normamente en python por lo cómodo, sencillo y
+            práctico que resulta ese lenguaje.
+          </Typography>
+          Una de mis metas es desarrollar tecnología que nos lleve al siguiente
+          nivel en la regeneración celular.
+          <Typography>
+            Existen 3 campo principales en los que tengo interés:
+          </Typography>
+          <List>
+            <ListItem>
+              <ListItemText>Robótica</ListItemText>
+              <CardMedia>
+                <picture>
+                  <img
+                    className={Styles.image}
+                    src={robotic}
+                    alt='robot picture'
+                  />
+                </picture>
+              </CardMedia>
+            </ListItem>
+            <ListItem>
+              <ListItemText>Inteligencia artificial</ListItemText>
+              <picture>
+                <img
+                  className={Styles.image}
+                  src={IA}
+                  alt='artificial intelligence'
+                />
+              </picture>
+            </ListItem>
+            <ListItem>
+              <ListItemText>Genética</ListItemText>
+              <picture>
+                <img className={Styles.image} src={adn} alt='adn image' />
+              </picture>
+            </ListItem>
+          </List>
+        </Grid>
+        <Grid item>
+          <Typography variant='h2' id='technologies'>
+            <strong>Technologies</strong>
+          </Typography>
+        </Grid>
+      </Grid>
       {/* <BackToTop /> */}
     </>
   );
