@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import NavbarItem from "../../atom/NavbarItem";
-import iconHamburger from "../../../../../public/frontendmentor/BLPM/icon-hamburger.svg";
-import iconClose from "../../../../../public/frontendmentor/BLPM/icon-close.svg";
-import { MenuWrapper, Logo, Nav, Links, Buttons, Icon } from "./styles";
+import React, { useState } from 'react';
+import NavbarItem from '../../atom/NavbarItem';
+import iconHamburger from '../../../../assets/frontendmentor/BLPM/icon-hamburger.svg';
+import iconClose from '../../../../assets/frontendmentor/BLPM/icon-close.svg';
+import { MenuWrapper, Logo, Nav, Links, Buttons, Icon } from './styles';
 
 const NavigationBar = ({ className, info, iconsList, logo }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ const NavigationBar = ({ className, info, iconsList, logo }) => {
   };
   return (
     <MenuWrapper className={className}>
-      <Logo src={logo} alt="Blogr Logo" />
+      <Logo src={logo} alt='Blogr Logo' />
       <Nav isOpen={isOpen}>
         <Links>
           {info.map((item, i) => {
@@ -27,13 +27,13 @@ const NavigationBar = ({ className, info, iconsList, logo }) => {
         </Links>
 
         <Buttons>
-          <button className="login">Login</button>
-          <button className="signUp">Sign Up</button>
+          <button className='login'>Login</button>
+          <button className='signUp'>Sign Up</button>
         </Buttons>
       </Nav>
       <Icon
         src={isOpen ? iconClose : iconHamburger}
-        alt="menu icon"
+        alt='menu icon'
         onClick={handleClick}
       />
     </MenuWrapper>

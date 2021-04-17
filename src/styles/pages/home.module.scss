@@ -1,7 +1,7 @@
 .test1 {
   width: 200px;
   height: 100px;
-  background-image: url('../../../public/frontendmentor/HLPWCSM/bg-section-bottom-desktop-1.svg');
+  background-image: url('../../assets/frontendmentor/HLPWCSM/bg-section-bottom-desktop-1.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -10,8 +10,12 @@
   height: 24px;
 }
 
-image {
+.imagen {
   width: 100%;
   max-width: 300px;
-  position: initial;
+}
+
+.listitem {
+  flex-direction: column;
+  display: flex;
 }

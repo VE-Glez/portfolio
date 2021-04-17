@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 $Desaturated-Red: hsl(0, 36%, 70%);
 $Soft-Red: hsl(0, 93%, 68%);
 $Dark-Grayish-Red: hsl(0, 6%, 24%);
@@ -6,7 +6,7 @@ $Grad1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 $Grad2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 $Font-size: 16px;
 
-$Family: "Josefin Sans";
+$Family: 'Josefin Sans';
 $Weights-light: 300;
 $Weights-normal: 400;
 $Weights-bold: 600;
@@ -19,9 +19,9 @@ $Weights-bold: 600;
   display: grid;
   gap: 10px;
   grid:
-    "header" 80px
-    "hero" 240px
-    "section" /1fr;
+    'header' 80px
+    'hero' 240px
+    'section' /1fr;
   justify-items: center;
   background-image: $Grad1;
 }
@@ -141,11 +141,11 @@ $Weights-bold: 600;
 @media screen and (min-width: 1440px) {
   .container {
     grid:
-      ". header hero" 20vh
-      ". section hero" 40vh
-      ". section hero" 40vh/15% 40% 40%;
+      '. header hero' 20vh
+      '. section hero' 40vh
+      '. section hero' 40vh/15% 40% 40%;
     align-content: flex-end;
-    background-image: url("../../../../public/frontendmentor/BACSM/bg-pattern-desktop.svg"),
+    background-image: url('../../../assets/frontendmentor/BACSM/bg-pattern-desktop.svg'),
       $Grad1;
     background-size: contain;
   }

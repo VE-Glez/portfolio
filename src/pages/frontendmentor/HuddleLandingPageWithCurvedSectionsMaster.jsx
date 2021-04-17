@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import Styles from "../../styles/pages/frontendmentor/HLPWCSM.module.scss";
-import iconCommunities from "../../../public/frontendmentor/HLPWCSM/icon-communities.svg";
-import iconMessages from "../../../public/frontendmentor/HLPWCSM/icon-messages.svg";
-import iconEmail from "../../../public/frontendmentor/HLPWCSM/icon-email.svg";
-import logo from "../../../public/frontendmentor/HLPWCSM/logo.svg";
-import screenMockups from "../../../public/frontendmentor/HLPWCSM/screen-mockups.svg";
-import illustrationFlowingConversation from "../../../public/frontendmentor/HLPWCSM/illustration-flowing-conversation.svg";
-import iconPhone from "../../../public/frontendmentor/HLPWCSM/icon-phone.svg";
-import illustrationGrowTogether from "../../../public/frontendmentor/HLPWCSM/illustration-grow-together.svg";
-import illustrationYourUsers from "../../../public/frontendmentor/HLPWCSM/illustration-your-users.svg";
-import ButtonPrimary from "../../components/HLPWCSM/ButtonPrimary";
-import { FaFacebookSquare, FaInstagram, FaTwitterSquare } from "react-icons/fa";
-import Logo from "../../components/HLPWCSM/Logo";
+import React, { useState } from 'react';
+import Styles from '../../styles/pages/frontendmentor/HLPWCSM.module.scss';
+import iconCommunities from '../../assets/frontendmentor/HLPWCSM/icon-communities.svg';
+import iconMessages from '../../assets/frontendmentor/HLPWCSM/icon-messages.svg';
+import iconEmail from '../../assets/frontendmentor/HLPWCSM/icon-email.svg';
+import logo from '../../assets/frontendmentor/HLPWCSM/logo.svg';
+import screenMockups from '../../assets/frontendmentor/HLPWCSM/screen-mockups.svg';
+import illustrationFlowingConversation from '../../assets/frontendmentor/HLPWCSM/illustration-flowing-conversation.svg';
+import iconPhone from '../../assets/frontendmentor/HLPWCSM/icon-phone.svg';
+import illustrationGrowTogether from '../../assets/frontendmentor/HLPWCSM/illustration-grow-together.svg';
+import illustrationYourUsers from '../../assets/frontendmentor/HLPWCSM/illustration-your-users.svg';
+import ButtonPrimary from '../../components/HLPWCSM/ButtonPrimary';
+import { FaFacebookSquare, FaInstagram, FaTwitterSquare } from 'react-icons/fa';
+import Logo from '../../components/HLPWCSM/Logo';
 
 const HuddleLandingPageWithCurvedSectionsMaster = () => {
   const [isValid, setIsValid] = useState(true);
@@ -19,13 +19,13 @@ const HuddleLandingPageWithCurvedSectionsMaster = () => {
     e.preventDefault();
     if (e.target.checkValidity()) {
       setIsValid(true);
-      console.log("Formulario enviado");
+      console.log('Formulario enviado');
     }
   };
   const handleInvalid = (w) => {
     w.preventDefault();
     setIsValid(false);
-    console.log("ES INVALIDO");
+    console.log('ES INVALIDO');
   };
 
   return (
@@ -33,7 +33,7 @@ const HuddleLandingPageWithCurvedSectionsMaster = () => {
       <section className={Styles.wrapper}>
         <header className={Styles.header}>
           <picture>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt='logo' />
           </picture>
           <button>Try it free</button>
         </header>
@@ -46,25 +46,25 @@ const HuddleLandingPageWithCurvedSectionsMaster = () => {
           </p>
           <ButtonPrimary />
           <picture>
-            <img src={screenMockups} alt="screen mockups" />
+            <img src={screenMockups} alt='screen mockups' />
           </picture>
         </div>
         <section className={Styles.section1}>
           <article className={Styles.art1}>
-            <img src={iconCommunities} alt="comunities icon" />
+            <img src={iconCommunities} alt='comunities icon' />
             <h2> 1.4k+</h2>
             <p>Communities Formed </p>
           </article>
 
           <article className={Styles.art2}>
-            <img src={iconMessages} alt="messages icon" />
+            <img src={iconMessages} alt='messages icon' />
             <h2>2.7m+</h2>
             <p>Messages Sent</p>
           </article>
         </section>
         <section className={Styles.section2}>
           <article>
-            <img src={illustrationGrowTogether} alt="" />
+            <img src={illustrationGrowTogether} alt='' />
             <header>
               <h2>Grow Together</h2>
               <p>
@@ -75,7 +75,7 @@ const HuddleLandingPageWithCurvedSectionsMaster = () => {
             </header>
           </article>
           <article>
-            <img src={illustrationFlowingConversation} alt="" />
+            <img src={illustrationFlowingConversation} alt='' />
             <header>
               <h2>Flowing Conversations</h2>
               <p>
@@ -86,7 +86,7 @@ const HuddleLandingPageWithCurvedSectionsMaster = () => {
             </header>
           </article>
           <article>
-            <img src={illustrationYourUsers} alt="" />
+            <img src={illustrationYourUsers} alt='' />
             <header>
               <h2>Your Users</h2>
               <p>
@@ -105,7 +105,7 @@ const HuddleLandingPageWithCurvedSectionsMaster = () => {
           <footer>
             <article className={Styles.first_footer_article}>
               <header>
-                <h3>Newsletter</h3>{" "}
+                <h3>Newsletter</h3>{' '}
                 <p>
                   To recieve tips on how to grow your community, sign up to our
                   weekly newsletter. We’ll never send you spam or pass on your
@@ -114,7 +114,7 @@ const HuddleLandingPageWithCurvedSectionsMaster = () => {
               </header>
               <form onSubmit={handleSubmit}>
                 <label>
-                  <input type="email" onInvalid={handleInvalid} />
+                  <input type='email' onInvalid={handleInvalid} />
                   {!isValid && (
                     <p className={Styles.errormsg}>Check your email please</p>
                   )}
@@ -130,12 +130,12 @@ const HuddleLandingPageWithCurvedSectionsMaster = () => {
               </p>
               <address>
                 <div>
-                  <img src={iconPhone} alt="icon phone" />
-                  <a href="tel:+15431234567">Phone: +1-543-123-4567</a>
+                  <img src={iconPhone} alt='icon phone' />
+                  <a href='tel:+15431234567'>Phone: +1-543-123-4567</a>
                 </div>
                 <div>
-                  <img src={iconEmail} alt="icon email" />
-                  <a href="mailto:example@hunddle.com">example@huddle.com</a>
+                  <img src={iconEmail} alt='icon email' />
+                  <a href='mailto:example@hunddle.com'>example@huddle.com</a>
                 </div>
               </address>
               <div className={Styles.icons}>

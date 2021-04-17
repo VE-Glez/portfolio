@@ -1,29 +1,29 @@
-import React from "react";
-import Styles from "../../styles/pages/frontendmentor/BLPM.module.scss";
-import iconArrowLight from "../../../public/frontendmentor/BLPM/icon-arrow-light.svg";
-import illustrationLaptopDesktop from "../../../public/frontendmentor/BLPM/illustration-laptop-desktop.svg";
+import React from 'react';
+import Styles from '../../styles/pages/frontendmentor/BLPM.module.scss';
+import iconArrowLight from '../../assets/frontendmentor/BLPM/icon-arrow-light.svg';
+import illustrationLaptopDesktop from '../../assets/frontendmentor/BLPM/illustration-laptop-desktop.svg';
 
-import illustrationPhones from "../../../public/frontendmentor/BLPM/illustration-phones.svg";
-import logo from "../../../public/frontendmentor/BLPM/logo.svg";
-import iconArrowDark from "../../../public/frontendmentor/BLPM/icon-arrow-dark.svg";
-import illustrationEditorDesktop from "../../../public/frontendmentor/BLPM/illustration-editor-desktop.svg";
-import illustrationLaptopMobile from "../../../public/frontendmentor/BLPM/illustration-laptop-mobile.svg";
-import illustrationEditorMobile from "../../../public/frontendmentor/BLPM/illustration-editor-mobile.svg";
-import NavigationBar from "../../components/BLPM/organism/NavigationBar";
+import illustrationPhones from '../../assets/frontendmentor/BLPM/illustration-phones.svg';
+import logo from '../../assets/frontendmentor/BLPM/logo.svg';
+import iconArrowDark from '../../assets/frontendmentor/BLPM/icon-arrow-dark.svg';
+import illustrationEditorDesktop from '../../assets/frontendmentor/BLPM/illustration-editor-desktop.svg';
+import illustrationLaptopMobile from '../../assets/frontendmentor/BLPM/illustration-laptop-mobile.svg';
+import illustrationEditorMobile from '../../assets/frontendmentor/BLPM/illustration-editor-mobile.svg';
+import NavigationBar from '../../components/BLPM/organism/NavigationBar';
 
 const BlogrLandingPageMain = () => {
   const info = [
     {
-      title: "Products",
-      items: ["Overview", "Pricing", "Marketplace", "Features", "Integrations"],
+      title: 'Products',
+      items: ['Overview', 'Pricing', 'Marketplace', 'Features', 'Integrations'],
     },
     {
-      title: "Company",
-      items: ["About", "Team", "Blog", "Careers"],
+      title: 'Company',
+      items: ['About', 'Team', 'Blog', 'Careers'],
     },
     {
-      title: "Connect",
-      items: ["Contact", "Newsletter", "LinkedIn"],
+      title: 'Connect',
+      items: ['Contact', 'Newsletter', 'LinkedIn'],
     },
   ];
   const icons = [iconArrowDark, iconArrowLight];
@@ -50,10 +50,10 @@ const BlogrLandingPageMain = () => {
         <h2 className={Styles.section1__title}>Designed for the future</h2>
         <picture className={Styles.section1__picture}>
           <source
-            media="(min-width: 1440px)"
+            media='(min-width: 1440px)'
             srcSet={illustrationEditorDesktop}
           />
-          <img src={illustrationEditorMobile} alt="illustration editor" />
+          <img src={illustrationEditorMobile} alt='illustration editor' />
         </picture>
         <article className={Styles.article1S1}>
           <h3 className={Styles.article1S1__title}>
@@ -83,7 +83,7 @@ const BlogrLandingPageMain = () => {
 
       <section className={Styles.section2}>
         <picture className={Styles.section2__picture}>
-          <img src={illustrationPhones} alt="illustration phones" />
+          <img src={illustrationPhones} alt='illustration phones' />
         </picture>
         <article className={Styles.article1S2}>
           <h3 className={Styles.article1S2__title}>
@@ -100,8 +100,8 @@ const BlogrLandingPageMain = () => {
 
       <section className={Styles.section3}>
         <picture className={Styles.section3__picture}>
-          <source media="(min-width: 1440px)" src={illustrationLaptopDesktop} />
-          <img src={illustrationLaptopMobile} alt="illustration laptop" />
+          <source media='(min-width: 1440px)' src={illustrationLaptopDesktop} />
+          <img src={illustrationLaptopMobile} alt='illustration laptop' />
         </picture>
         <article className={Styles.article1S3}>
           <h3 className={Styles.article1S3__title}>Free, open, simple</h3>
@@ -126,57 +126,57 @@ const BlogrLandingPageMain = () => {
 
       <footer className={Styles.footer}>
         <picture className={Styles.footer__picture}>
-          <img src={logo} alt="Blogr logo" />
+          <img src={logo} alt='Blogr logo' />
         </picture>
         <ul className={Styles.listProducts}>
           <li>
-            <a href="#">Product</a>
-          </li>{" "}
+            <a href='#'>Product</a>
+          </li>{' '}
           <li>
-            <a href="#">Overview</a>
-          </li>{" "}
+            <a href='#'>Overview</a>
+          </li>{' '}
           <li>
-            <a href="#">Pricing</a>
-          </li>{" "}
+            <a href='#'>Pricing</a>
+          </li>{' '}
           <li>
-            <a href="#">Marketplace</a>
-          </li>{" "}
+            <a href='#'>Marketplace</a>
+          </li>{' '}
           <li>
-            <a href="#">Features</a>
-          </li>{" "}
+            <a href='#'>Features</a>
+          </li>{' '}
           <li>
-            <a href="#">Integrations</a>
+            <a href='#'>Integrations</a>
           </li>
         </ul>
         <ul className={Styles.listCompany}>
           <li>
-            <a href="#">Company</a>
-          </li>{" "}
+            <a href='#'>Company</a>
+          </li>{' '}
           <li>
-            <a href="#">About</a>
-          </li>{" "}
+            <a href='#'>About</a>
+          </li>{' '}
           <li>
-            <a href="#">Team</a>
-          </li>{" "}
+            <a href='#'>Team</a>
+          </li>{' '}
           <li>
-            <a href="#">Blog</a>
-          </li>{" "}
+            <a href='#'>Blog</a>
+          </li>{' '}
           <li>
-            <a href="#">Careers</a>
+            <a href='#'>Careers</a>
           </li>
         </ul>
         <ul className={Styles.listConnect}>
           <li>
-            <a href="#">Connect</a>
-          </li>{" "}
+            <a href='#'>Connect</a>
+          </li>{' '}
           <li>
-            <a href="#">Contact</a>
-          </li>{" "}
+            <a href='#'>Contact</a>
+          </li>{' '}
           <li>
-            <a href="#">Newsletter</a>
-          </li>{" "}
+            <a href='#'>Newsletter</a>
+          </li>{' '}
           <li>
-            <a href="#">LinkedIn</a>
+            <a href='#'>LinkedIn</a>
           </li>
         </ul>
       </footer>

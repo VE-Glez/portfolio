@@ -157,7 +157,7 @@ $white: hsl(207, 100%, 98%);
       position: absolute;
       top: -50px;
       left: 0;
-      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-top-mobile-1.svg');
+      background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-section-top-mobile-1.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       z-index: 1;
@@ -169,7 +169,7 @@ $white: hsl(207, 100%, 98%);
       position: absolute;
       bottom: -50px;
       left: 0;
-      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-mobile-1.svg');
+      background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-section-bottom-mobile-1.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       z-index: 1;
@@ -181,7 +181,7 @@ $white: hsl(207, 100%, 98%);
       position: absolute;
       top: -50px;
       left: 0;
-      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-top-mobile-2.svg');
+      background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-section-top-mobile-2.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       z-index: 1;
@@ -193,7 +193,7 @@ $white: hsl(207, 100%, 98%);
       position: absolute;
       bottom: -50px;
       left: 0;
-      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-mobile-2.svg');
+      background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-section-bottom-mobile-2.svg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       z-index: 1;
@@ -228,7 +228,7 @@ $white: hsl(207, 100%, 98%);
       position: absolute;
       top: -50px;
       left: 0;
-      background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-footer-top-mobile.svg');
+      background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-footer-top-mobile.svg');
       background-repeat: no-repeat;
       background-size: 100% 100%;
       z-index: 1;
@@ -356,17 +356,17 @@ $white: hsl(207, 100%, 98%);
       padding: 0 10%;
 
       &:first-child::after {
-        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-desktop-1.svg');
+        background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-section-bottom-desktop-1.svg');
       }
 
       &:first-child::before {
-        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-top-desktop-1.svg');
+        background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-section-top-desktop-1.svg');
       }
       &:last-child::after {
-        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-bottom-desktop-2.svg');
+        background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-section-bottom-desktop-2.svg');
       }
       &:last-child::before {
-        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-section-top-desktop-2.svg');
+        background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-section-top-desktop-2.svg');
       }
 
       img {
@@ -400,7 +400,7 @@ $white: hsl(207, 100%, 98%);
       flex-direction: row-reverse;
       justify-content: center;
       &::before {
-        background-image: url('../../../../public/frontendmentor/HLPWCSM/bg-footer-top-desktop.svg');
+        background-image: url('../../../assets/frontendmentor/HLPWCSM/bg-footer-top-desktop.svg');
         height: 100px;
         background-repeat: no-repeat;
         top: -100px;

@@ -7,17 +7,32 @@ import {
   ListItem,
   ListItemText,
   CardMedia,
+  makeStyles,
 } from '@material-ui/core';
 import Styles from '../styles/pages/home.module.scss';
 import robotic from '../assets/images/free-robot.jpg';
 import IA from '../assets/images/artificial-intelligence.png';
 import adn from '../assets/images/adn2.jpg';
 
+const useStyles = makeStyles((theme) => ({
+  listItem: {
+    flexDirection: 'column',
+    display: 'flex',
+    border: `1px solid ${theme.palette.grey[500]}`,
+  },
+}));
+
 const Home = () => {
+  const classes = useStyles();
   return (
     <>
-      <Grid container xl justify='center' style={{ textAlign: 'center' }}>
-        <Grid item xs={12}>
+      <Grid
+        container
+        xs={12}
+        justify='center'
+        style={{ wordBreak: 'break-word', textAlign: 'center' }}
+      >
+        <Grid item xs={10}>
           <Typography variant='h2' component='h1'>
             <strong>
               Valentín Eduardo <br />
@@ -28,7 +43,7 @@ const Home = () => {
             Te doy la bienvenida a mi página web
           </Typography>
         </Grid>
-        <Grid item md={10}>
+        <Grid item xs={10}>
           <Typography variant='h2' id='about-me'>
             <strong>Sobre mí</strong>
           </Typography>
@@ -53,37 +68,37 @@ const Home = () => {
             Existen 3 campo principales en los que tengo interés:
           </Typography>
           <List>
-            <ListItem>
+            <ListItem className={classes.listItem}>
               <ListItemText>Robótica</ListItemText>
               <CardMedia>
                 <picture>
                   <img
-                    className={Styles.image}
+                    className={Styles.imagen}
                     src={robotic}
                     alt='robot picture'
                   />
                 </picture>
               </CardMedia>
             </ListItem>
-            <ListItem>
+            <ListItem className={classes.listItem}>
               <ListItemText>Inteligencia artificial</ListItemText>
               <picture>
                 <img
-                  className={Styles.image}
+                  className={Styles.imagen}
                   src={IA}
                   alt='artificial intelligence'
                 />
               </picture>
             </ListItem>
-            <ListItem>
+            <ListItem className={classes.listItem}>
               <ListItemText>Genética</ListItemText>
               <picture>
-                <img className={Styles.image} src={adn} alt='adn image' />
+                <img className={Styles.imagen} src={adn} alt='adn image' />
               </picture>
             </ListItem>
           </List>
         </Grid>
-        <Grid item>
+        <Grid item xs={10}>
           <Typography variant='h2' id='technologies'>
             <strong>Technologies</strong>
           </Typography>

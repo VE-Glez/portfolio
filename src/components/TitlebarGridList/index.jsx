@@ -7,7 +7,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import { Link } from 'react-router-dom';
-import data from '../../utils/projectsData.json';
+import data from '../../utils/projectsData';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,6 +45,8 @@ const useStyles = makeStyles((theme) => ({
  */
 
 const tileData = data.results;
+console.log(data);
+
 export default function TitlebarGridList() {
   const classes = useStyles();
 

@@ -1,19 +1,19 @@
-import Styles from "../../styles/pages/frontendmentor/APCM.module.scss";
-import avatar from "../../../public/frontendmentor/APCM/avatar-michelle.jpg";
-import hero from "../../../public/frontendmentor/APCM/drawers.jpg";
-import IconShare from "../../components/APCM/IconShare";
-import IconFacebook from "../../components/APCM/IconFacebook";
-import IconTwitter from "../../components/APCM/IconTwitter";
-import IconPinterest from "../../components/APCM/IconPinterest";
-import clsx from "clsx";
-import React, { useState } from "react";
+import Styles from '../../styles/pages/frontendmentor/APCM.module.scss';
+import avatar from '../../assets/frontendmentor/APCM/avatar-michelle.jpg';
+import hero from '../../assets/frontendmentor/APCM/drawers.jpg';
+import IconShare from '../../components/APCM/IconShare';
+import IconFacebook from '../../components/APCM/IconFacebook';
+import IconTwitter from '../../components/APCM/IconTwitter';
+import IconPinterest from '../../components/APCM/IconPinterest';
+import clsx from 'clsx';
+import React, { useState } from 'react';
 const ArticlePreviewComponentMaster = () => {
   const [click, setClick] = useState(false);
   return (
     <div className={Styles.container}>
       <div className={Styles.card}>
         <picture className={Styles.card__hero}>
-          <img src={hero} alt="desktop" className={Styles.card__image} />
+          <img src={hero} alt='desktop' className={Styles.card__image} />
         </picture>
         <article className={Styles.card__body}>
           <h2 className={Styles.card__title}>
@@ -31,7 +31,7 @@ const ArticlePreviewComponentMaster = () => {
             <div className={Styles.author__image_container}>
               <img
                 src={avatar}
-                alt="michelle"
+                alt='michelle'
                 className={Styles.author__image}
               />
             </div>

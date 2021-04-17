@@ -172,18 +172,19 @@ for root, dirs, files in os.walk('./'):
         for img in files:
             if pFiles.search(img):
                 src = Path.joinpath(actual, root, img)
-                output_to_local = Path.joinpath(actual, 'outputTree','public/projects')
+                output_to_local = Path.joinpath(actual, 'outputTree','src/assets/projects')
                 if not output_to_local.exists():
                     output_to_local.mkdir(parents=True)
                 output_to_local = Path.joinpath(output_to_local,project_Acronym+'-'+img)
                 if not output_to_local.exists():
                     print('no existe. Creando {}'.format(output_to_local))
                     copyfile(src, output_to_local)            
-                output_to_portfolio = Path(ruta_portafolio, 'public/projects', project_Acronym+'-'+img)
+                output_to_portfolio = Path(ruta_portafolio, 'src/assets/projects', project_Acronym+'-'+img)
                 if not output_to_portfolio.exists():
                     print('no existe. Creando {}'.format(output_to_portfolio))
                     copyfile(src, output_to_portfolio)
                 key = img.split('-')[0]
+                print(key)
                 source = './projects/{0}-{1}'.format(project_Acronym, img)
                 item[key] = source
         item['id'] = project_Acronym
@@ -203,24 +204,24 @@ for root, dirs, files in os.walk('./'):
                     # dinamic_page_imports += 'import {name} from "../../components/{acronnym}/{name}";\n'.format(name=camelCaseName, acronnym = project_Acronym)
                     dinamic_page_imports += 'import {name} from "../../../public/frontendmentor/{acronnym}/{original}";\n'.format(name=camelCaseName, acronnym = project_Acronym, original = image)
                     src = Path.joinpath(actual, root, image)
-                    output_to_local = Path(actual, 'outputTree/public/frontendmentor', project_Acronym)
+                    output_to_local = Path(actual, 'outputTree/src/assets/frontendmentor', project_Acronym)
                     if not output_to_local.exists():
                         output_to_local.mkdir(parents=True)
                     output_to_local = output_to_local.joinpath(image)
                     copyfile(src, output_to_local)
-                    output_to_portfolio = Path(ruta_portafolio, 'public/frontendmentor', project_Acronym)
+                    output_to_portfolio = Path(ruta_portafolio, 'src/assets/frontendmentor', project_Acronym)
                     if not output_to_portfolio.exists():
                         output_to_portfolio.mkdir(parents=True)
                     output_to_portfolio = output_to_portfolio.joinpath(image)
                     copyfile(src, output_to_portfolio)
                 else:
                     src = Path.joinpath(actual, root, image)
-                    output_to_local = Path(actual, 'outputTree/public/frontendmentor', project_Acronym)
+                    output_to_local = Path(actual, 'outputTree/src/assets/frontendmentor', project_Acronym)
                     if not output_to_local.exists():
                         output_to_local.mkdir(parents=True)
                     output_to_local = output_to_local.joinpath(image)
                     copyfile(src, output_to_local)
-                    output_to_portfolio = Path(ruta_portafolio, 'public/frontendmentor', project_Acronym)
+                    output_to_portfolio = Path(ruta_portafolio, 'src/assets/frontendmentor', project_Acronym)
                     if not output_to_portfolio.exists():
                         output_to_portfolio.mkdir(parents=True)
                     output_to_portfolio = output_to_portfolio.joinpath(image)
@@ -228,8 +229,6 @@ for root, dirs, files in os.walk('./'):
         #aqui funciona la variable component_name
         # print(component_name)
         createPageComponent(component_name, dinamic_page_imports, project_Acronym, mainText)
-
-        
 
 
 
@@ -274,7 +273,7 @@ copyfile(routes_file, output_path_to_porfolio_routes)
 
 #ahora lo que falta....
 # Por cada carpeta llamada imagenes obtener las imagenes, excluir favicon-32x32.png
-#por cada png o jpg copiará el archivo a la carpeta Path.joinpath(ruta_portafolio, 'public/frontendmentor', )
+#por cada png o jpg copiará el archivo a la carpeta Path.joinpath(ruta_portafolio, 'src/assets/frontendmentor', )
 #por cada SVG:
     #1.Guardarlo su contenido (el html) en un archivo .jsx ubicado en Path.joinpath(ruta_portafolio, 'src/components', project_Acronym)
     #2.Cambiar sus atributos a camelCase (si aplica) ejemplo:

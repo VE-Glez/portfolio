@@ -13,6 +13,7 @@ import {
   CardMedia,
   Grid,
   Typography,
+  Box,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -38,13 +39,21 @@ const Certifications = () => {
 
   const handleKey = (e) => console.log(e);
   return (
-    <Grid container fluid>
-      <Typography variant='h1'> Estas son mis certificaciones</Typography>
+    <Grid container xs={12} fluid style={{ wordBreak: 'break-word' }}>
+      <Box>
+        <Typography variant='h1'> Estas son mis certificaciones</Typography>
+      </Box>
       <Grid item column sm={12} md={6}>
-        <Button onClick={handleClick}>
-          <img className={Styles.diploma} src={webpack} alt='Diploma webpack' />
+        <Box>
+          <Button onClick={handleClick}>
+            <img
+              className={Styles.diploma}
+              src={webpack}
+              alt='Diploma webpack'
+            />
+          </Button>
           <Typography variant='body2'>Click image</Typography>
-        </Button>
+        </Box>
         <Dialog
           open={openDialog}
           onClose={handleClose}

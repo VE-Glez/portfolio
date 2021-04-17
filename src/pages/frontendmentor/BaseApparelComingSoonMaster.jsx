@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import IconArrow from "../../components/BACSM/IconArrow";
-import IconError from "../../components/BACSM/IconError";
-import Logo from "../../components/BACSM/Logo";
-import Styles from "../../styles/pages/frontendmentor/BACSM.module.scss";
-import heroMobile from "../../../public/frontendmentor/BACSM/hero-mobile.jpg";
-import heroDesktop from "../../../public/frontendmentor/BACSM/hero-desktop.jpg";
-import clsx from "clsx";
+import React, { useState } from 'react';
+import IconArrow from '../../components/BACSM/IconArrow';
+import IconError from '../../components/BACSM/IconError';
+import Logo from '../../components/BACSM/Logo';
+import Styles from '../../styles/pages/frontendmentor/BACSM.module.scss';
+import heroMobile from '../../assets/frontendmentor/BACSM/hero-mobile.jpg';
+import heroDesktop from '../../assets/frontendmentor/BACSM/hero-desktop.jpg';
+import clsx from 'clsx';
 
 const BaseApparelComingSoonMaster = () => {
   const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
@@ -23,8 +23,8 @@ const BaseApparelComingSoonMaster = () => {
         <Logo />
       </header>
       <picture className={Styles.picture}>
-        <source media="(min-width: 1440px)" srcSet={heroDesktop} />
-        <img src={heroMobile} alt="adversating" />
+        <source media='(min-width: 1440px)' srcSet={heroDesktop} />
+        <img src={heroMobile} alt='adversating' />
       </picture>
       <section className={Styles.section}>
         <h1>
@@ -41,15 +41,15 @@ const BaseApparelComingSoonMaster = () => {
         >
           <input
             className={Styles.emailInput}
-            type="text"
-            placeholder="Email Address"
+            type='text'
+            placeholder='Email Address'
           />
           {invalid && (
             <IconError className={clsx(invalid && Styles.iconError)} />
           )}
           <button className={Styles.button}>
-            {" "}
-            <IconArrow />{" "}
+            {' '}
+            <IconArrow />{' '}
           </button>
         </form>
         {invalid && (
