@@ -46,11 +46,7 @@ const Certifications = () => {
       <Grid item column sm={12} md={6}>
         <Box>
           <Button onClick={handleClick}>
-            <img
-              className={Styles.diploma}
-              src={webpack}
-              alt='Diploma webpack'
-            />
+            <img className={Styles.diploma} src={webpack} alt='Diploma webpack' />
           </Button>
           <Typography variant='body2'>Click image</Typography>
         </Box>
@@ -65,21 +61,13 @@ const Certifications = () => {
           }}
         >
           <DialogContent onKeyPress={handleKey} tabIndex='0'>
-            <img
-              className={Styles.diplomaDialog}
-              src={webpack}
-              alt='Diploma webpack'
-            />
+            <img className={Styles.diplomaDialog} src={webpack} alt='Diploma webpack' />
           </DialogContent>
         </Dialog>
       </Grid>
       <Grid item sm={12} md={6}>
         <Card className={classes.card}>
-          <CardMedia
-            className={classes.cardmedia}
-            image={ecmascript}
-            title='diploma png de ecma 6'
-          ></CardMedia>
+          <CardMedia className={classes.cardmedia} image={ecmascript} title='diploma png de ecma 6'></CardMedia>
           <CardActions>
             <Button variant='contained' color='secondary'>
               <a href={ecma} target='_blank'>

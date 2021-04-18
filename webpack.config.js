@@ -17,7 +17,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       '@components': path.resolve(__dirname, 'src/components/'),
-      '@styles': path.resolve(__dirname, 'src/styles/'),
+      '@icons': path.resolve(__dirname, 'src/assets/icons-technologies'),
     },
   },
   module: {

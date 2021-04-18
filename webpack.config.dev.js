@@ -24,6 +24,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      '@icons': path.join(__dirname, 'src/assets/icons-technologies'),
+    },
   },
   module: {
     rules: [
