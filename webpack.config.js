@@ -18,6 +18,7 @@ module.exports = {
     alias: {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@icons': path.resolve(__dirname, 'src/assets/icons-technologies'),
+      '@diplomas': path.resolve(__dirname, 'src/assets/diplomas-images'),
     },
   },
   module: {

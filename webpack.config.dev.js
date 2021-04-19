@@ -15,10 +15,7 @@ module.exports = {
     host: '192.168.100.25',
     port: 8080,
     // open: true,
-    contentBase: [
-      path.join(__dirname, './public'),
-      path.join(__dirname, './src/assets/diplomas'),
-    ],
+    contentBase: [path.join(__dirname, './public'), path.join(__dirname, './src/assets/diplomas')],
     historyApiFallback: true,
     // compress: true,
   },
@@ -26,6 +23,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       '@icons': path.join(__dirname, 'src/assets/icons-technologies'),
+      '@diplomas': path.resolve(__dirname, 'src/assets/diplomas-images'),
     },
   },
   module: {
