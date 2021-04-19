@@ -2,24 +2,13 @@ import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {
-  Hidden,
-  IconButton,
-  InputBase,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Slide,
-  useScrollTrigger,
-} from '@material-ui/core';
+import { Hidden, IconButton, Slide, useScrollTrigger } from '@material-ui/core';
 import { Menu, Search as SearchIcon } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
-import TemporaryDrawer from './TemporalDrawer';
-import listofitems from './menuData';
 import { useStyles } from './styles';
 import AuxiliarBackButton from './AuxiliarBackButton';
 import BackToTop from '../BackToTop';
-import NavigationLinks from './NavigationLinks';
+import NavLinks from './NavLinks';
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -29,28 +18,10 @@ function HideOnScroll(props) {
   const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
   return (
+    //in={!trigger}
     <Slide appear={false} direction='down' in={!trigger}>
       {children}
     </Slide>
-  );
-}
-
-function SearchForm() {
-  const classes = useStyles();
-  return (
-    <div className={classes.search}>
-      <div className={classes.searchIcon}>
-        <SearchIcon />
-      </div>
-      <InputBase
-        placeholder='Search…'
-        classes={{
-          root: classes.inputRoot,
-          input: classes.inputInput,
-        }}
-        inputProps={{ 'aria-label': 'search' }}
-      />
-    </div>
   );
 }
 
@@ -67,18 +38,9 @@ export default function MyNavbar() {
               Veglez
             </Typography>
             <span className={classes.grow}></span>
-            <Hidden mdDown>
-              <NavigationLinks
-                key='desktopNablinks'
-                setIsOpen={setIsOpen}
-                device='desktop'
-                dense={true}
-                disableGutters={true}
-              />
-            </Hidden>
-            <SearchForm />
+            <NavLinks isOpen={isOpen} setIsOpen={setIsOpen} />
             <Hidden lgUp>
-              <IconButton onClick={() => setIsOpen(true)}>
+              <IconButton onClick={() => setIsOpen(!isOpen)}>
                 <Menu />
               </IconButton>
             </Hidden>
@@ -89,8 +51,6 @@ export default function MyNavbar() {
       <Toolbar id={'back-to-top'} />
       <AuxiliarBackButton />
       <BackToTop anchorEl='back-to-top' />
-
-      <TemporaryDrawer isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 }

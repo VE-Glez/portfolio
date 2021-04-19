@@ -1,6 +1,7 @@
 import { FaRegFolderOpen, FaToolbox, FaAddressCard } from 'react-icons/fa';
 import { GiDiploma } from 'react-icons/gi';
 import { AiFillHome } from 'react-icons/ai';
+import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 
 const listofitems = [
   {
@@ -9,18 +10,22 @@ const listofitems = [
     label: 'Home',
     nested: [
       {
+        icon: PermIdentityIcon,
+        targetId: 'about-me',
+        label: 'Acerca de mi',
+      },
+      {
         icon: FaToolbox,
         targetId: 'technologies',
-        label: 'Skills',
+        label: 'Habilidades',
       },
       {
         icon: FaAddressCard,
-        targetId: 'about-me',
+        targetId: 'contact-me',
         label: 'Contact me',
       },
     ],
   },
-
   {
     icon: FaRegFolderOpen,
     route: '/projects',

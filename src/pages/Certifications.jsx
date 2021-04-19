@@ -39,11 +39,11 @@ const Certifications = () => {
 
   const handleKey = (e) => console.log(e);
   return (
-    <Grid container xs={12} fluid style={{ wordBreak: 'break-word' }}>
+    <Grid container style={{ wordBreak: 'break-word' }}>
       <Box>
         <Typography variant='h1'> Estas son mis certificaciones</Typography>
       </Box>
-      <Grid item column sm={12} md={6}>
+      <Grid item sm={12} md={6}>
         <Box>
           <Button onClick={handleClick}>
             <img className={Styles.diploma} src={webpack} alt='Diploma webpack' />

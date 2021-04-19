@@ -58,7 +58,7 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <Grid container xs={12} justify='center' style={{ wordBreak: 'break-word', textAlign: 'justify', padding: 45 }}>
+      <Grid container justify='center' style={{ wordBreak: 'break-word', textAlign: 'justify', padding: 45 }}>
         <Grid container justify='center' className={classes.header}>
           <Grid item xs={12} sm={10} md={4}>
             <picture className={classes.imageContainer}>

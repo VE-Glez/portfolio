@@ -46,14 +46,14 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles();
   return (
-    <footer className={classes.footer}>
-      <Grid container xs={12} md={8} className={classes.mainGrid}>
+    <footer className={classes.footer} id='contact-me'>
+      <Grid container justify='center' className={classes.mainGrid}>
         <Grid item xs={12}>
           <Typography align='center' variant='h5' color='textPrimary'>
             Contact me
           </Typography>
         </Grid>
-        <Grid item justify='center' xs={6}>
+        <Grid item xs={6}>
           <List className={classes.list}>
             <ListItem target='_blank' button href='mailto:valentin.eduardo.g94@gmail.com' component={Button}>
               <ListItemIcon>
@@ -78,7 +78,7 @@ const Footer = () => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item justify='center' xs={6}>
+        <Grid item xs={6}>
           <List className={classes.list}>
             <ListItem target='_blank' button href='https://github.com/veglez' component={Button}>
               <ListItemIcon>
