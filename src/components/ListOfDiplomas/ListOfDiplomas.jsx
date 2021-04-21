@@ -10,8 +10,12 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2),
     display: 'grid',
     justifyContent: 'center',
+    justifyItems: 'center',
     alignItems: 'center',
     gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    [theme.breakpoints.up('md')]: {
+      gap: theme.spacing(4),
+    },
   },
 }));
 
