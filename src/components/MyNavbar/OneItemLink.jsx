@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(2),
     [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(4),
+      background: theme.palette.grey[200],
     },
   },
   boxItemWrapper: {
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
       top: 0,
       boxShadow: 'none',
       background: theme.palette.background.paper,
+      marginBlockStart: theme.spacing(0),
     },
   },
 }));
@@ -46,17 +48,19 @@ const OneItemLink = ({ itemN, openDrawer }) => {
     try {
       const anchor = document.getElementById(target);
       anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => openDrawer(false), 50);
+      anchor.focus();
+      openDrawer(false);
     } catch (error) {
       console.log(error.message);
     }
+    setOpen(false);
   }, [target]);
 
   const handleInnerListClick = (event) => {
+    document.querySelector('body').style = {};
     setTarget(event.currentTarget.dataset.targetid);
   };
   const simplehandleClick = () => {
-    openDrawer(false);
     setOpen(!open);
   };
   const complexhandleClick = () => {
@@ -64,24 +68,22 @@ const OneItemLink = ({ itemN, openDrawer }) => {
   };
 
   const handleBlur = () => {
-    // setOpen(false);
-    setTimeout(() => setOpen(false), 50);
+    setTimeout(() => setOpen(false), 150);
   };
 
   return (
     <Box className={classes.boxItemWrapper}>
       <>
-        <ListItem
-          button
-          component={Link}
-          to={itemN.route}
-          onClick={itemN.nested ? complexhandleClick : simplehandleClick}
-        >
+        <ListItem button component={Link} to={itemN.route}>
           <ListItemIcon>{React.createElement(itemN.icon)}</ListItemIcon>
           <ListItemText primary={itemN.label} />
-          {itemN.nested && <IconButton onBlur={handleBlur}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>}
+          {itemN.nested && (
+            <IconButton onClick={itemN.nested ? complexhandleClick : simplehandleClick} onBlur={handleBlur}>
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </IconButton>
+          )}
         </ListItem>
-        {itemN.nested && (
+        {itemN.nested && open && (
           <Collapse className={classes.collapse} in={open} timeout='auto' unmountOnExit>
             <List disablePadding>
               {itemN.nested.map((item) => {
@@ -106,4 +108,4 @@ const OneItemLink = ({ itemN, openDrawer }) => {
   );
 };
 
-export default OneItemLink;
+export default React.memo(OneItemLink);

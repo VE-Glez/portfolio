@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { Hidden, IconButton, Slide, useScrollTrigger } from '@material-ui/core';
-import { Menu, Search as SearchIcon } from '@material-ui/icons';
+import {  Slide, useScrollTrigger } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useStyles } from './styles';
 import AuxiliarBackButton from './AuxiliarBackButton';
@@ -27,7 +26,7 @@ function HideOnScroll(props) {
 
 export default function MyNavbar() {
   const classes = useStyles();
-  const [isOpen, setIsOpen] = useState(false);
+  
 
   return (
     <>
@@ -38,12 +37,8 @@ export default function MyNavbar() {
               Veglez
             </Typography>
             <span className={classes.grow}></span>
-            <NavLinks isOpen={isOpen} setIsOpen={setIsOpen} />
-            <Hidden lgUp>
-              <IconButton onClick={() => setIsOpen(!isOpen)}>
-                <Menu />
-              </IconButton>
-            </Hidden>
+            <NavLinks />
+            
           </Toolbar>
         </AppBar>
       </HideOnScroll>
