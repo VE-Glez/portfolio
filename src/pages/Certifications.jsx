@@ -37,9 +37,9 @@ const Certifications = () => {
           adquirir el conocimiento para el desarrollo web enfocado en frontend.
         </Typography>
         <Typography>
-          La experiencia de programar con <span className={classes.code}>C</span> y{' '}
-          <span className={classes.code}>Python</span> en la universidad me facilita asimilar varios conceptos de
-          javascript.
+          La experiencia de programar con <span className={classes.code}>C</span> (programación imperativa) y{' '}
+          <span className={classes.code}>Python</span> (programación orientada a objetos) en la universidad me facilita
+          asimilar varios conceptos de javascript al ser un lenguaje multiparadigma.
         </Typography>
         <Typography>Desde que entré a Platzi hasta la fecha he cursado y aprobado los siguientes cursos:</Typography>
       </Grid>

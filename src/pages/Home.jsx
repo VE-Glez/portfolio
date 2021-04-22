@@ -22,7 +22,6 @@ import cv from '../assets/veglez_CV.pdf';
 import ListOfIcons from '../components/ListOfIcons/ListOfIcons';
 
 const useStyles = makeStyles((theme) => ({
-  container: { wordBreak: 'break-word', textAlign: 'justify', padding: 45 },
   listItem: {
     flexDirection: 'column',
     display: 'flex',
@@ -30,18 +29,21 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     background: theme.palette.background.paper,
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     flexDirection: 'row-reverse',
   },
   imageContainer: {
-    height: 300,
+    height: '100%',
     display: 'block',
     position: 'relative',
     overflow: 'hidden',
   },
   imagen: {
     width: '100%',
-    transform: 'translateY(-17%)',
+    transform: 'translateY(-17vw)',
+    [theme.breakpoints.down('md')]: {
+      transform: 'translateY(-25vw)',
+    },
   },
   buttons: {
     display: 'flex',
@@ -57,43 +59,46 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
+  console.log('José Carlos Chavez Ruíz.... JDT ');
   return (
     <>
-      <Grid container justify='center' className={classes.container}>
-        <Grid container justify='center' className={classes.header} component='header'>
-          <Grid item xs={12} sm={10} md={4}>
-            <picture className={classes.imageContainer}>
-              <img src={me} alt='my photo' className={classes.imagen} />
-            </picture>
-          </Grid>
-          <Grid item xs={12} sm={10} md={4}>
-            <Typography variant='h3' component='h1'>
-              <strong>
-                Valentín Eduardo <br />
-                González Morales
-              </strong>
-            </Typography>
-            <Typography variant='h6' component='p'>
-              Te doy la bienvenida a mi página web
-            </Typography>
-            <Box className={classes.buttons}>
-              <Button
-                style={{ wordBreak: 'normal' }}
-                className={classes.contrastText}
-                color='primary'
-                variant='contained'
-                href={cv}
-                component='a'
-                target='_blank'
-              >
-                {' '}
-                Download CV
-              </Button>
-              <Button color={'primary'} variant='outlined' component={'a'} href={tesis} target='_blank'>
-                {' '}
-                Read tesis
-              </Button>
-            </Box>
+      <Grid container justify='center' style={{ wordBreak: 'break-word', textAlign: 'justify', padding: 45 }}>
+        <Grid item xs={12} sm={10}>
+          <Grid container justify='center' className={classes.header}>
+            <Grid item xs={8} md={4}>
+              <picture className={classes.imageContainer}>
+                <img src={me} alt='my photo' className={classes.imagen} />
+              </picture>
+            </Grid>
+            <Grid item xs={10} md={4}>
+              <Typography variant='h3' component='h1'>
+                <strong>
+                  Valentín Eduardo <br />
+                  González Morales
+                </strong>
+              </Typography>
+              <Typography variant='h6' component='p'>
+                Te doy la bienvenida a mi página web
+              </Typography>
+              <Box className={classes.buttons}>
+                <Button
+                  style={{ wordBreak: 'normal' }}
+                  className={classes.contrastText}
+                  color='primary'
+                  variant='contained'
+                  href={cv}
+                  component='a'
+                  target='_blank'
+                >
+                  {' '}
+                  Download CV
+                </Button>
+                <Button color={'primary'} variant='outlined' component={'a'} href={tesis} target='_blank'>
+                  {' '}
+                  Read tesis
+                </Button>
+              </Box>
+            </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12} sm={10}>
