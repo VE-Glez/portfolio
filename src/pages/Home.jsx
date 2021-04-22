@@ -22,6 +22,7 @@ import cv from '../assets/veglez_CV.pdf';
 import ListOfIcons from '../components/ListOfIcons/ListOfIcons';
 
 const useStyles = makeStyles((theme) => ({
+  container: { wordBreak: 'break-word', textAlign: 'justify', padding: 45 },
   listItem: {
     flexDirection: 'column',
     display: 'flex',
@@ -58,8 +59,8 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <Grid container justify='center' style={{ wordBreak: 'break-word', textAlign: 'justify', padding: 45 }}>
-        <Grid container justify='center' className={classes.header}>
+      <Grid container justify='center' className={classes.container}>
+        <Grid container justify='center' className={classes.header} component='header'>
           <Grid item xs={12} sm={10} md={4}>
             <picture className={classes.imageContainer}>
               <img src={me} alt='my photo' className={classes.imagen} />

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Styles from '../../styles/pages/frontendmentor/CBTSM.module.scss';
-import IconNext from '../../components/CBTSM/IconNext';
-import IconPrev from '../../components/CBTSM/IconPrev';
-import data from '../../assets/frontendmentor/CBTSM/data';
+import IconNext from '@frontendmentorComponents/CBTSM/IconNext';
+import IconPrev from '@frontendmentorComponents/CBTSM/IconPrev';
+import data from '@frontendmentorAssets/CBTSM/data';
 
 const CodingBootcampTestimonialsSliderMaster = () => {
   const datos = data.results;

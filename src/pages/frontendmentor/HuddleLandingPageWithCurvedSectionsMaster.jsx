@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import Styles from '../../styles/pages/frontendmentor/HLPWCSM.module.scss';
-import iconCommunities from '../../assets/frontendmentor/HLPWCSM/icon-communities.svg';
-import iconMessages from '../../assets/frontendmentor/HLPWCSM/icon-messages.svg';
-import iconEmail from '../../assets/frontendmentor/HLPWCSM/icon-email.svg';
-import logo from '../../assets/frontendmentor/HLPWCSM/logo.svg';
-import screenMockups from '../../assets/frontendmentor/HLPWCSM/screen-mockups.svg';
-import illustrationFlowingConversation from '../../assets/frontendmentor/HLPWCSM/illustration-flowing-conversation.svg';
-import iconPhone from '../../assets/frontendmentor/HLPWCSM/icon-phone.svg';
-import illustrationGrowTogether from '../../assets/frontendmentor/HLPWCSM/illustration-grow-together.svg';
-import illustrationYourUsers from '../../assets/frontendmentor/HLPWCSM/illustration-your-users.svg';
-import ButtonPrimary from '../../components/HLPWCSM/ButtonPrimary';
+import iconCommunities from '@frontendmentorAssets/HLPWCSM/icon-communities.svg';
+import iconMessages from '@frontendmentorAssets/HLPWCSM/icon-messages.svg';
+import iconEmail from '@frontendmentorAssets/HLPWCSM/icon-email.svg';
+import logo from '@frontendmentorAssets/HLPWCSM/logo.svg';
+import screenMockups from '@frontendmentorAssets/HLPWCSM/screen-mockups.svg';
+import illustrationFlowingConversation from '@frontendmentorAssets/HLPWCSM/illustration-flowing-conversation.svg';
+import iconPhone from '@frontendmentorAssets/HLPWCSM/icon-phone.svg';
+import illustrationGrowTogether from '@frontendmentorAssets/HLPWCSM/illustration-grow-together.svg';
+import illustrationYourUsers from '@frontendmentorAssets/HLPWCSM/illustration-your-users.svg';
+import ButtonPrimary from '@frontendmentorComponents/HLPWCSM/ButtonPrimary';
+import Logo from '@frontendmentorComponents/HLPWCSM/Logo';
 import { FaFacebookSquare, FaInstagram, FaTwitterSquare } from 'react-icons/fa';
-import Logo from '../../components/HLPWCSM/Logo';
 
 const HuddleLandingPageWithCurvedSectionsMaster = () => {
   const [isValid, setIsValid] = useState(true);

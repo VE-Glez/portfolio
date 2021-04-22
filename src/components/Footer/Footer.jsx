@@ -16,7 +16,7 @@ import {
   Grid,
 } from '@material-ui/core';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import IconTwitter from '../APCM/IconTwitter';
+import IconTwitter from '@frontendmentorComponents/APCM/IconTwitter';
 import { GitHub, LinkedIn, PhoneAndroidOutlined, Twitter } from '@material-ui/icons';
 import { FaDev } from 'react-icons/fa';
 

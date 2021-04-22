@@ -1,11 +1,11 @@
 import React from 'react';
 import Styles from '../../styles/pages/frontendmentor/SMDWTSM.module.scss';
-import iconYoutube from '../../assets/frontendmentor/SMDWTSM/icon-youtube.svg';
-import iconDown from '../../assets/frontendmentor/SMDWTSM/icon-down.svg';
-import iconInstagram from '../../assets/frontendmentor/SMDWTSM/icon-instagram.svg';
-import iconUp from '../../assets/frontendmentor/SMDWTSM/icon-up.svg';
-import iconFacebook from '../../assets/frontendmentor/SMDWTSM/icon-facebook.svg';
-import iconTwitter from '../../assets/frontendmentor/SMDWTSM/icon-twitter.svg';
+import iconYoutube from '@frontendmentorAssets/SMDWTSM/icon-youtube.svg';
+import iconDown from '@frontendmentorAssets/SMDWTSM/icon-down.svg';
+import iconInstagram from '@frontendmentorAssets/SMDWTSM/icon-instagram.svg';
+import iconUp from '@frontendmentorAssets/SMDWTSM/icon-up.svg';
+import iconFacebook from '@frontendmentorAssets/SMDWTSM/icon-facebook.svg';
+import iconTwitter from '@frontendmentorAssets/SMDWTSM/icon-twitter.svg';
 
 const SocialMediaDashboardWithThemeSwitcherMaster = () => {
   return (

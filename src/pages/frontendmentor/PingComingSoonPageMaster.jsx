@@ -1,7 +1,7 @@
 
     import React from "react";
     import Styles from "../../styles/pages/frontendmentor/PCSPM.module.scss";
-    import Logo from "../../components/PCSPM/Logo";
+    import Logo from "@frontendmentorComponents/PCSPM/Logo";
 
     
     const PingComingSoonPageMaster = () => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavbarItem from '../../atom/NavbarItem';
-import iconHamburger from '../../../../assets/frontendmentor/BLPM/icon-hamburger.svg';
-import iconClose from '../../../../assets/frontendmentor/BLPM/icon-close.svg';
+import iconHamburger from '@frontendmentorAssets/BLPM/icon-hamburger.svg';
+import iconClose from '@frontendmentorAssets/BLPM/icon-close.svg';
 import { MenuWrapper, Logo, Nav, Links, Buttons, Icon } from './styles';
 
 const NavigationBar = ({ className, info, iconsList, logo }) => {

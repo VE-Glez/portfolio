@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import IconArrow from '../../components/BACSM/IconArrow';
-import IconError from '../../components/BACSM/IconError';
-import Logo from '../../components/BACSM/Logo';
+import IconArrow from '@frontendmentorComponents/BACSM/IconArrow';
+import IconError from '@frontendmentorComponents/BACSM/IconError';
+import Logo from '@frontendmentorComponents/BACSM/Logo';
 import Styles from '../../styles/pages/frontendmentor/BACSM.module.scss';
-import heroMobile from '../../assets/frontendmentor/BACSM/hero-mobile.jpg';
-import heroDesktop from '../../assets/frontendmentor/BACSM/hero-desktop.jpg';
+import heroMobile from '@frontendmentorAssets/BACSM/hero-mobile.jpg';
+import heroDesktop from '@frontendmentorAssets/BACSM/hero-desktop.jpg';
 import clsx from 'clsx';
 
 const BaseApparelComingSoonMaster = () => {

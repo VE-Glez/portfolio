@@ -1,10 +1,10 @@
 import Styles from '../../styles/pages/frontendmentor/APCM.module.scss';
-import avatar from '../../assets/frontendmentor/APCM/avatar-michelle.jpg';
-import hero from '../../assets/frontendmentor/APCM/drawers.jpg';
-import IconShare from '../../components/APCM/IconShare';
-import IconFacebook from '../../components/APCM/IconFacebook';
-import IconTwitter from '../../components/APCM/IconTwitter';
-import IconPinterest from '../../components/APCM/IconPinterest';
+import avatar from '@frontendmentorAssets/APCM/avatar-michelle.jpg';
+import hero from '@frontendmentorAssets/APCM/drawers.jpg';
+import IconShare from '@frontendmentorComponents/APCM/IconShare';
+import IconFacebook from '@frontendmentorComponents/APCM/IconFacebook';
+import IconTwitter from '@frontendmentorComponents/APCM/IconTwitter';
+import IconPinterest from '@frontendmentorComponents/APCM/IconPinterest';
 import clsx from 'clsx';
 import React, { useState } from 'react';
 const ArticlePreviewComponentMaster = () => {

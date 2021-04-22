@@ -1,6 +1,6 @@
 import React from "react";
-import ButtonPrice from "../../components/ICWSFM/atom/ButtonPrice";
-import Form from "../../components/ICWSFM/molecule/Form";
+import ButtonPrice from "@frontendmentorComponents/ICWSFM/atom/ButtonPrice";
+import Form from "@frontendmentorComponents/ICWSFM/molecule/Form";
 import Styles from "../../styles/pages/frontendmentor/ICWSFM.module.scss";
 const IntroComponentWithSignupFormMaster = () => {
   return (

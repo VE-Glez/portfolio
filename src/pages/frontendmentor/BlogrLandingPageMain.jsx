@@ -1,15 +1,15 @@
 import React from 'react';
 import Styles from '../../styles/pages/frontendmentor/BLPM.module.scss';
-import iconArrowLight from '../../assets/frontendmentor/BLPM/icon-arrow-light.svg';
-import illustrationLaptopDesktop from '../../assets/frontendmentor/BLPM/illustration-laptop-desktop.svg';
+import iconArrowLight from '@frontendmentorAssets/BLPM/icon-arrow-light.svg';
+import illustrationLaptopDesktop from '@frontendmentorAssets/BLPM/illustration-laptop-desktop.svg';
 
-import illustrationPhones from '../../assets/frontendmentor/BLPM/illustration-phones.svg';
-import logo from '../../assets/frontendmentor/BLPM/logo.svg';
-import iconArrowDark from '../../assets/frontendmentor/BLPM/icon-arrow-dark.svg';
-import illustrationEditorDesktop from '../../assets/frontendmentor/BLPM/illustration-editor-desktop.svg';
-import illustrationLaptopMobile from '../../assets/frontendmentor/BLPM/illustration-laptop-mobile.svg';
-import illustrationEditorMobile from '../../assets/frontendmentor/BLPM/illustration-editor-mobile.svg';
-import NavigationBar from '../../components/BLPM/organism/NavigationBar';
+import illustrationPhones from '@frontendmentorAssets/BLPM/illustration-phones.svg';
+import logo from '@frontendmentorAssets/BLPM/logo.svg';
+import iconArrowDark from '@frontendmentorAssets/BLPM/icon-arrow-dark.svg';
+import illustrationEditorDesktop from '@frontendmentorAssets/BLPM/illustration-editor-desktop.svg';
+import illustrationLaptopMobile from '@frontendmentorAssets/BLPM/illustration-laptop-mobile.svg';
+import illustrationEditorMobile from '@frontendmentorAssets/BLPM/illustration-editor-mobile.svg';
+import NavigationBar from '@frontendmentorComponents/BLPM/organism/NavigationBar';
 
 const BlogrLandingPageMain = () => {
   const info = [

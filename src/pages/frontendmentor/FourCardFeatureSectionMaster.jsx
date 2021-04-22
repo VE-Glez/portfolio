@@ -1,9 +1,9 @@
 import React from "react";
 import Styles from "../../styles/pages/frontendmentor/FCFSM.module.scss";
-import Supervisor from "../../components/FCFSM/IconSupervisor";
-import TeamBuilder from "../../components/FCFSM/IconTeamBuilder";
-import Karma from "../../components/FCFSM/IconKarma";
-import Calculator from "../../components/FCFSM/IconCalculator";
+import Supervisor from "@frontendmentorComponents/FCFSM/IconSupervisor";
+import TeamBuilder from "@frontendmentorComponents/FCFSM/IconTeamBuilder";
+import Karma from "@frontendmentorComponents/FCFSM/IconKarma";
+import Calculator from "@frontendmentorComponents/FCFSM/IconCalculator";
 const FourCardFeatureSectionMaster = () => {
   return (
     <main className={Styles.main}>

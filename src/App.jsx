@@ -2,7 +2,6 @@ import { Box, CssBaseline } from '@material-ui/core';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-import GeneralNavbar from './components/GeneralNavbar';
 import MyNavbar from './components/MyNavbar/MyNavbar';
 import Certifications from './pages/Certifications';
 import Home from './pages/Home';

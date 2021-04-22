@@ -4,26 +4,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { SourceMapDevToolPlugin } = require('webpack');
 
 module.exports = {
-  mode: 'development',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
     publicPath: '/',
-  },
-  devServer: {
-    host: '192.168.100.25',
-    port: 8080,
-    // open: true,
-    contentBase: [path.join(__dirname, './public'), path.join(__dirname, './src/assets/diplomas')],
-    historyApiFallback: true,
-    // compress: true,
+    clean: true,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
       '@icons': path.join(__dirname, 'src/assets/icons-technologies'),
       '@diplomas': path.resolve(__dirname, 'src/assets/diplomas-images'),
+      '@frontendmentorComponents': path.resolve(__dirname, 'src/components/frontendmentor'),
+      '@frontendmentorAssets': path.resolve(__dirname, 'src/assets/frontendmentor')
     },
   },
   module: {
@@ -69,7 +63,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: './[name].css',
     }),
-    new SourceMapDevToolPlugin(),
   ],
-  devtool: false,
 };
