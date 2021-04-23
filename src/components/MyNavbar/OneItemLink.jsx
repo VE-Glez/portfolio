@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Box, Collapse, IconButton, List, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
-import { v4 } from 'uuid';
 const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(2),
@@ -38,33 +37,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const body = document.querySelector('body');
+
 const OneItemLink = ({ itemN, openDrawer }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [target, setTarget] = useState('');
-
+  const anchor = document.getElementById(target);
+  //anchor siempre guarda el ultimo valor, después de dar click a algun item de inner list, éste debería también cambiar su target a cero para que pueda volver a scrolear
+  //porque el scroll solo es posible durante el "componentShouldUpdate" y solo se cumple cuando target ha cambiado
   useEffect(() => {
-    console.log(`cambiando target a: ${target}`);
-    try {
-      const anchor = document.getElementById(target);
+    if (anchor) {
       anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      anchor.focus();
+      setOpen(false);
       openDrawer(false);
-    } catch (error) {
-      console.log(error.message);
     }
-    setOpen(false);
+    return setTarget('');
   }, [target]);
 
   const handleInnerListClick = (event) => {
-    document.querySelector('body').style = {};
+    body.style = {};
     setTarget(event.currentTarget.dataset.targetid);
   };
-  const simplehandleClick = () => {
+  const handleClick = () => {
     setOpen(!open);
   };
-  const complexhandleClick = () => {
-    setOpen(!open);
+
+  const handleClose = () => {
+    body.style = {};
+    body.scrollIntoView(true);
+    openDrawer(false);
   };
 
   const handleBlur = () => {
@@ -74,11 +76,11 @@ const OneItemLink = ({ itemN, openDrawer }) => {
   return (
     <Box className={classes.boxItemWrapper}>
       <>
-        <ListItem button component={Link} to={itemN.route}>
+        <ListItem button component={Link} to={itemN.route} onClick={!itemN.nested ? handleClose : null}>
           <ListItemIcon>{React.createElement(itemN.icon)}</ListItemIcon>
           <ListItemText primary={itemN.label} />
           {itemN.nested && (
-            <IconButton onClick={itemN.nested ? complexhandleClick : simplehandleClick} onBlur={handleBlur}>
+            <IconButton onClick={handleClick} onBlur={handleBlur}>
               {open ? <ExpandLess /> : <ExpandMore />}
             </IconButton>
           )}
@@ -97,7 +99,7 @@ const OneItemLink = ({ itemN, openDrawer }) => {
                     <ListItemIcon>{React.createElement(item.icon)}</ListItemIcon>
                     <ListItemText primary={item.label} />
                   </ListItem>,
-                  { key: v4() }
+                  { key: item.label }
                 );
               })}
             </List>
@@ -108,4 +110,4 @@ const OneItemLink = ({ itemN, openDrawer }) => {
   );
 };
 
-export default React.memo(OneItemLink);
+export default OneItemLink;
