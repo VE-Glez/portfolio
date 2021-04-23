@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { v4 } from 'uuid';
 import { Drawer, Hidden, IconButton, List, makeStyles } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import clsx from 'clsx';
@@ -62,10 +61,10 @@ const useStyles = makeStyles((theme) => ({
 const NavLinks = () => {
   const classes = useStyles();
   const [isOpen, setIsOpen] = useState(false);
+  const body = document.querySelector('body');
 
   const handleClick = () => {
     setIsOpen(!isOpen);
-    const body = document.querySelector('body');
     if (!isOpen) {
       body.style.overflow = 'hidden';
       body.style.paddingInlineEnd = '15px';
@@ -79,7 +78,7 @@ const NavLinks = () => {
       <div className={clsx(classes.drawer, isOpen && classes.visible)}>
         <List component='nav' className={classes.root}>
           {listofitems.map((item) =>
-            React.cloneElement(<OneItemLink openDrawer={setIsOpen} itemN={item} />, { key: v4() })
+            React.cloneElement(<OneItemLink openDrawer={setIsOpen} itemN={item} />, { key: item.label })
           )}
         </List>
         <div className={classes.drawerAfter} onClick={handleClick}></div>

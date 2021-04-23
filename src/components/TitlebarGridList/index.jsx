@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
  */
 
 const tileData = data.results;
-console.log(data);
+// console.log(data);
 
 export default function TitlebarGridList() {
   const classes = useStyles();
@@ -64,10 +64,7 @@ export default function TitlebarGridList() {
               title={tile.title}
               subtitle={<span>by: {tile.author}</span>}
               actionIcon={
-                <IconButton
-                  aria-label={`info about ${tile.title}`}
-                  className={classes.icon}
-                >
+                <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
                   <InfoIcon />
                 </IconButton>
               }
