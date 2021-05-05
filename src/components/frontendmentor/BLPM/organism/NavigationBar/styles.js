@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MenuWrapper = styled.div`
   display: flex;
@@ -6,6 +6,7 @@ export const MenuWrapper = styled.div`
   align-items: center;
   position: relative;
   margin: 0 4vw;
+  font-size: 16px;
 
   @media screen and (min-width: 1440px) {
     justify-content: flex-start;
@@ -18,7 +19,7 @@ export const Logo = styled.img`
 `;
 
 export const Nav = styled.nav`
-  visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
+  visibility: ${(props) => (props.isOpen ? 'visible' : 'hidden')};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,11 +68,15 @@ export const Buttons = styled.div`
     border: none;
     padding: 1em 1.5em;
     border-radius: 2em;
-    font-size: 1.6rem;
+    font-size: 16px;
   }
 
   .login {
     background-color: transparent;
+
+    @media screen and (min-width: 1440px) {
+      color: white;
+    }
   }
 
   .signUp {
@@ -87,7 +92,8 @@ export const Buttons = styled.div`
       color: hsl(356, 100%, 66%);
 
       &:hover {
-        background: hsla(0, 0%, 100%, 0.2);
+        background: hsla(0, 0%, 100%, 0.35);
+        color: white;
       }
     }
   }

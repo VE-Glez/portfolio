@@ -1,9 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const Lista = styled.ul`
   position: relative;
   color: hsl(237, 17%, 21%);
-  font-weight: 500;
+  font-weight: 700;
+  margin-inline-end: 5px;
 
   &:focus {
     outline: none;
@@ -21,6 +22,7 @@ export const Title = styled.li`
 
   @media screen and (min-width: 1440px) {
     text-align: start;
+    color: white;
 
     &:hover {
       text-decoration: underline;
@@ -29,13 +31,13 @@ export const Title = styled.li`
 `;
 
 export const Icon = styled.img`
-  transform: translateY(${(props) => (props.isClicked ? "-100%" : "-50%")})
-    rotate(${(props) => (props.isClicked ? "180deg" : 0)});
+  transform: translateY(${(props) => (props.isClicked ? '-100%' : '-50%')})
+    rotate(${(props) => (props.isClicked ? '180deg' : 0)});
   margin-inline-start: 8px;
 `;
 
 export const SecondaryList = styled.ul`
-  display: ${(props) => (props.isClicked ? "inline-block" : "none")};
+  display: ${(props) => (props.isClicked ? 'inline-block' : 'none')};
   background-color: hsl(240, 2%, 79%);
   width: 100%;
   padding: 1.1em 1.4em;

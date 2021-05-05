@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Collapse, IconButton, List, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core';
+import {
+  Box,
+  Collapse,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  makeStyles,
+} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 const useStyles = makeStyles((theme) => ({
@@ -76,7 +85,13 @@ const OneItemLink = ({ itemN, openDrawer }) => {
   return (
     <Box className={classes.boxItemWrapper}>
       <>
-        <ListItem button component={Link} to={itemN.route} onClick={!itemN.nested ? handleClose : null}>
+        <ListItem
+          button
+          component={Link}
+          to={itemN.route}
+          onClick={!itemN.nested ? handleClose : null}
+          style={{ paddingBottom: 0 }}
+        >
           <ListItemIcon>{React.createElement(itemN.icon)}</ListItemIcon>
           <ListItemText primary={itemN.label} />
           {itemN.nested && (
@@ -86,7 +101,12 @@ const OneItemLink = ({ itemN, openDrawer }) => {
           )}
         </ListItem>
         {itemN.nested && open && (
-          <Collapse className={classes.collapse} in={open} timeout='auto' unmountOnExit>
+          <Collapse
+            className={classes.collapse}
+            in={open}
+            timeout='auto'
+            unmountOnExit
+          >
             <List disablePadding>
               {itemN.nested.map((item) => {
                 return React.cloneElement(
@@ -96,7 +116,9 @@ const OneItemLink = ({ itemN, openDrawer }) => {
                     data-targetid={item.targetId}
                     onClick={handleInnerListClick}
                   >
-                    <ListItemIcon>{React.createElement(item.icon)}</ListItemIcon>
+                    <ListItemIcon>
+                      {React.createElement(item.icon)}
+                    </ListItemIcon>
                     <ListItemText primary={item.label} />
                   </ListItem>,
                   { key: item.label }

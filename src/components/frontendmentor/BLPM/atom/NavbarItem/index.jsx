@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { PropTypes } from "prop-types";
-import { Title, ListItem, Lista, Icon, SecondaryList } from "./styles.js";
+import React, { useState } from 'react';
+import { PropTypes } from 'prop-types';
+import { Title, ListItem, Lista, Icon, SecondaryList } from './styles.js';
 const NavbarItem = ({ groupTitle, items, iconsList }) => {
   const [isClicked, setIsClicked] = useState(false);
 
@@ -9,11 +9,13 @@ const NavbarItem = ({ groupTitle, items, iconsList }) => {
   };
   return (
     <>
-      <Lista tabIndex="0" onBlur={() => setIsClicked(false)}>
+      <Lista>
+        {' '}
+        {/*tabIndex="0" onBlur={() => setIsClicked(false)}> */}
         <Title onClick={handleClick}>
-          {groupTitle}{" "}
+          {groupTitle}{' '}
           <picture>
-            <source media="(min-width: 1440px)" srcSet={iconsList[1]} />
+            <source media='(min-width: 1440px)' srcSet={iconsList[1]} />
             <Icon
               isClicked={isClicked}
               src={iconsList[0]}

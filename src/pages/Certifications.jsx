@@ -7,8 +7,11 @@ const useStyles = makeStyles((theme) => ({
   gridContainer: {
     wordBreak: 'break-word',
     justifyContent: 'center',
-    margin: theme.spacing(4, 1),
     gap: theme.spacing(4),
+    paddingBlock: theme.spacing(4),
+    textAlign: 'justify',
+    // [theme.breakpoints.up('md')]: {
+    // },
   },
   code: {
     fontWeight: 700,
@@ -25,7 +28,7 @@ const Certifications = () => {
           Desarrollo profesional
         </Typography>{' '}
       </Grid>
-      <Grid item sm={12} md={10}>
+      <Grid item xs={11} md={10}>
         <Typography variant='body1'>
           {' '}
           En julio del 2020 decidí unirme a una comunidad dentro de <a>Platzi</a> la cual me ha ayudado a desarrollarme

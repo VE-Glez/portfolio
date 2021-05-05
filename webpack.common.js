@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { SourceMapDevToolPlugin } = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -17,7 +16,7 @@ module.exports = {
       '@icons': path.join(__dirname, 'src/assets/icons-technologies'),
       '@diplomas': path.resolve(__dirname, 'src/assets/diplomas-images'),
       '@frontendmentorComponents': path.resolve(__dirname, 'src/components/frontendmentor'),
-      '@frontendmentorAssets': path.resolve(__dirname, 'src/assets/frontendmentor')
+      '@frontendmentorAssets': path.resolve(__dirname, 'src/assets/frontendmentor'),
     },
   },
   module: {

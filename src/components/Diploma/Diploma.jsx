@@ -6,7 +6,6 @@ import {
   CardMedia,
   Dialog,
   DialogContent,
-  IconButton,
   makeStyles,
   Typography,
 } from '@material-ui/core';
@@ -59,9 +58,13 @@ export default function Diploma({ itemN }) {
   return (
     <>
       <Card className={classes.card} variant='elevation' onClick={handleClick}>
-        <CardMedia className={classes.diploma} image={itemN.diploma} alt={`Diploma ${itemN.courseName}`} />
+        <CardMedia
+          className={classes.diploma}
+          image={itemN.diploma}
+          alt={`Diploma ${itemN.title}`}
+        />
         <CardContent className={classes.content}>
-          <Typography variant='button'>Diploma {itemN.courseName}</Typography>
+          <Typography variant='button'>Diploma {itemN.title}</Typography>
         </CardContent>
       </Card>
 
@@ -76,10 +79,18 @@ export default function Diploma({ itemN }) {
         }}
       >
         <DialogContent tabIndex='0'>
-          <Button variant='contained' onClick={handleClose} className={classes.closeButton}>
+          <Button
+            variant='contained'
+            onClick={handleClose}
+            className={classes.closeButton}
+          >
             <Close />
           </Button>
-          <img className={classes.diplomaDialog} src={itemN.diploma} alt={`Diploma ${itemN.courseName}`} />
+          <img
+            className={classes.diplomaDialog}
+            src={itemN.diploma}
+            alt={`Diploma ${itemN.title}`}
+          />
         </DialogContent>
       </Dialog>
     </>

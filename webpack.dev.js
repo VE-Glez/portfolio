@@ -1,9 +1,9 @@
 const path = require('path');
-const {merge} = require('webpack-merge')
+const { merge } = require('webpack-merge');
 const { SourceMapDevToolPlugin } = require('webpack');
-const common = require('./webpack.common.js')
+const common = require('./webpack.common.js');
 
-module.exports = merge(common,{
+module.exports = merge(common, {
   mode: 'development',
   devServer: {
     host: '192.168.100.25',
@@ -14,8 +14,6 @@ module.exports = merge(common,{
     // compress: true,
   },
 
-  plugins: [
-    new SourceMapDevToolPlugin(),
-  ],
+  plugins: [new SourceMapDevToolPlugin()],
   devtool: false,
 });

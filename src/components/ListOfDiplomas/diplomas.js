@@ -35,135 +35,135 @@ import webpack from '@diplomas/diploma-webpack_converted_0.webp';
 const data = [
   {
     diploma: webpack,
-    courseName: 'Webpack',
+    title: 'Webpack',
   },
   {
     diploma: asincronismo,
-    courseName: 'Asincronismo',
+    title: 'Asincronismo',
   },
   {
     diploma: aprender,
-    courseName: 'Técnicas de aprendizaje online',
+    title: 'Técnicas de aprendizaje online',
   },
   {
     diploma: basicojs,
-    courseName: 'JS Básico',
+    title: 'JS Básico',
   },
   {
     diploma: fbBots,
-    courseName: 'Facebook bots',
+    title: 'Facebook bots',
   },
   {
     diploma: cssgrid,
-    courseName: 'Css Grid',
+    title: 'Css Grid',
   },
   {
     diploma: devtools,
-    courseName: 'Devtools',
+    title: 'Devtools',
   },
   {
     diploma: dom,
-    courseName: 'Manipulación del DOM',
+    title: 'Manipulación del DOM',
   },
   {
     diploma: ecma6,
-    courseName: 'Ecmascript+6',
+    title: 'Ecmascript+6',
   },
   {
     diploma: electronica,
-    courseName: 'Electronica',
+    title: 'Electronica',
   },
   {
     diploma: expresionesregulares,
-    courseName: 'Expresiones regulares',
+    title: 'Expresiones regulares',
   },
   {
     diploma: figma,
-    courseName: 'Figma',
+    title: 'Figma',
   },
   {
     diploma: frontend,
-    courseName: 'Desarrollo Frontend',
+    title: 'Desarrollo Frontend',
   },
   {
     diploma: ecommerce,
-    courseName: 'Fundamentos ecommerce',
+    title: 'Fundamentos ecommerce',
   },
   {
     diploma: fundamentosjs,
-    courseName: 'Fundamentos JS',
+    title: 'Fundamentos JS',
   },
   {
     diploma: git,
-    courseName: 'Git y Github',
+    title: 'Git y Github',
   },
   {
     diploma: htmlcss,
-    courseName: 'HTML & CSS',
+    title: 'HTML & CSS',
   },
   {
     diploma: htmlpractico,
-    courseName: 'HTML pŕactico',
+    title: 'HTML pŕactico',
   },
   {
     diploma: ingles,
-    courseName: 'Escuela de inglés',
+    title: 'Escuela de inglés',
   },
   {
     diploma: introweb,
-    courseName: 'Historia de la web',
+    title: 'Historia de la web',
   },
   {
     diploma: mobilefirst,
-    courseName: 'Maquetación Mobile First',
+    title: 'Maquetación Mobile First',
   },
   {
     diploma: npm,
-    courseName: 'Gestión de paquetes con NPM',
+    title: 'Gestión de paquetes con NPM',
   },
   {
     diploma: preprocesadores,
-    courseName: 'Preprocesadores',
+    title: 'Preprocesadores',
   },
   {
     diploma: react,
-    courseName: 'React',
+    title: 'React',
   },
   {
     diploma: reactejs,
-    courseName: 'React ejs',
+    title: 'React ejs',
   },
   {
     diploma: reacthooks,
-    courseName: 'React hooks',
+    title: 'React hooks',
   },
   {
     diploma: reactavanzado,
-    courseName: 'React avanzado',
+    title: 'React avanzado',
   },
   {
     diploma: road2code,
-    courseName: 'Reto Road to code 2.0',
+    title: 'Reto Road to code 2.0',
   },
   {
     diploma: sass,
-    courseName: 'SASS',
+    title: 'SASS',
   },
   {
     diploma: scope,
-    courseName: 'Javascript scopes',
+    title: 'Javascript scopes',
   },
   {
     diploma: spa,
-    courseName: 'Single Page Application Vanila JS',
+    title: 'Single Page Application Vanila JS',
   },
   {
     diploma: spa2,
-    courseName: 'Single Page Application',
+    title: 'Single Page Application',
   },
   {
     diploma: trello,
-    courseName: 'Trello',
+    title: 'Trello',
   },
 ];
 
