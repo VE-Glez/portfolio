@@ -1,3 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+//Primary
+$blue: hsl(223, 87%, 63%);
+// Secondary
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+// Neutral
+$gray: hsl(0, 0%, 59%);
+$very-dark-blue: hsl(209, 33%, 12%);
+//Typography
+//Body Copy
+$font-size: 20px;
+//Fonts
+$family: 'Libre Franklin', sans-serif;
+$weight1: 300;
+$weight2: 600;
+$weight3: 700;
+
 .container {
   min-height: 100vh;
+  font-size: $font-size;
+  font-family: $family;
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.logo {
+  width: 100px;
+  // font-size: 30px;
+}
+
+.header {
+  text-align: center;
+  h1 {
+    font-size: 2.5em;
+    font-weight: $weight1;
+    color: $gray;
+
+    span {
+      font-weight: $weight3;
+      color: $very-dark-blue;
+    }
+  }
+
+  .headerMessage {
+    font-weight: $weight1;
+    color: $very-dark-blue;
+  }
+}
+
+.form {
+  margin-block-start: 1.5em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    width: 70%;
+  }
+
+  button {
+    width: 150px;
+    height: 50px;
+    padding: 1.25em 1.75em;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    background-color: $blue;
+    box-shadow: 0 5px 20px -5px $blue;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(1.25);
+    }
+  }
+}
+
+.errorMessage {
+  font-size: 0.65em;
+  font-style: italic;
+  color: $light-red;
+  text-align: start;
+  margin: 10px 0 0 15px;
+}
+
+.illustration {
+  width: 90%;
+}
+
+.emailInput {
+  width: 100%;
+  border-radius: 50px;
+  border: 1px solid $pale-blue;
+  padding: 1.25em 1.75em;
+  outline: none;
+}
+
+.invalid {
+  border: 1px solid $light-red;
+}
+
+.icons {
+  color: $blue;
+  font-size: 0.75em;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+
+  & > svg {
+    border: 1px solid $pale-blue;
+    border-radius: 50%;
+    padding: 0.3em;
+    box-sizing: content-box;
+
+    &:hover {
+      background-color: $blue;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+
+  p {
+    font-size: 0.75em;
+    margin-block-start: 1em;
+    color: $gray;
+    font-weight: $weight1;
+  }
 }
