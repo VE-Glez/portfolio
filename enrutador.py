@@ -12,9 +12,9 @@ dinamic_page_imports= ''
 
 
 actual = Path.cwd()
-isProject = re.compile(r'^\.\/(?:[a-z]+-)+[a-z]+$')
-pFiles = re.compile(r'-design[\w-]*\.jpg')
-results = []
+isProject = re.compile(r'^\.\/(?:[a-z]+-)+[a-z]+$')  #el formato de proyecto ej. social-media-dashboard
+pFiles = re.compile(r'-design[\w-]*\.jpg')  #folder donde se guardan las imagenes del resultado esperado
+results = []   
 rutas = {
     #"key": (import, component, path),
 }

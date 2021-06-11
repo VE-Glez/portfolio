@@ -15,8 +15,8 @@ module.exports = {
     alias: {
       '@icons': path.join(__dirname, 'src/assets/icons-technologies'),
       '@diplomas': path.resolve(__dirname, 'src/assets/diplomas-images'),
-      '@frontendmentorComponents': path.resolve(__dirname, 'src/components/frontendmentor'),
-      '@frontendmentorAssets': path.resolve(__dirname, 'src/assets/frontendmentor'),
+      '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@assets': path.resolve(__dirname, 'src/assets/'),
     },
   },
   module: {

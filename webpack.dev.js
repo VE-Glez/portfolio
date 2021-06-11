@@ -8,8 +8,11 @@ module.exports = merge(common, {
   devServer: {
     host: '192.168.100.25',
     port: 8080,
-    // open: true,
-    contentBase: [path.join(__dirname, './public'), path.join(__dirname, './src/assets/diplomas')],
+    open: true,
+    contentBase: [
+      path.join(__dirname, './public'),
+      path.join(__dirname, './src/assets/diplomas'),
+    ],
     historyApiFallback: true,
     // compress: true,
   },

@@ -1,14 +1,8 @@
 import React from 'react';
 import {
   makeStyles,
-  Box,
   Button,
-  Input,
-  InputBase,
-  FormLabel,
   Typography,
-  FormControl,
-  FormHelperText,
   List,
   ListItemText,
   ListItemIcon,
@@ -16,9 +10,13 @@ import {
   Grid,
 } from '@material-ui/core';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import IconTwitter from '@frontendmentorComponents/APCM/IconTwitter';
-import { GitHub, LinkedIn, PhoneAndroidOutlined, Twitter } from '@material-ui/icons';
-import { FaDev } from 'react-icons/fa';
+import {
+  GitHub,
+  LinkedIn,
+  PhoneAndroidOutlined,
+  Twitter,
+} from '@material-ui/icons';
+import { FaDev, FaTwitter } from 'react-icons/fa';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -55,21 +53,37 @@ const Footer = () => {
         </Grid>
         <Grid item xs={6}>
           <List className={classes.list}>
-            <ListItem target='_blank' button href='mailto:valentin.eduardo.g94@gmail.com' component={Button}>
+            <ListItem
+              target='_blank'
+              button
+              href='mailto:valentin.eduardo.g94@gmail.com'
+              component={Button}
+            >
               <ListItemIcon>
                 {' '}
                 <MailOutlineIcon style={{ color: '#e53f32' }} />{' '}
               </ListItemIcon>
               <ListItemText primary='Send an email' />
             </ListItem>
-            <ListItem target='_blank' button target='_blank' href='https://twitter.com/ve_glez' component={Button}>
+            <ListItem
+              target='_blank'
+              button
+              target='_blank'
+              href='https://twitter.com/ve_glez'
+              component={Button}
+            >
               <ListItemIcon>
                 {' '}
-                <Twitter style={{ color: '#4da1f2' }} />{' '}
+                <FaTwitter style={{ color: '#4da1f2' }} />{' '}
               </ListItemIcon>
               <ListItemText primary='@VE_Glez' />
             </ListItem>
-            <ListItem target='_blank' button href='tel:+522293390918' component={Button}>
+            <ListItem
+              target='_blank'
+              button
+              href='tel:+522293390918'
+              component={Button}
+            >
               <ListItemIcon>
                 {' '}
                 <PhoneAndroidOutlined style={{ color: '#00436b' }} />{' '}
@@ -80,7 +94,12 @@ const Footer = () => {
         </Grid>
         <Grid item xs={6}>
           <List className={classes.list}>
-            <ListItem target='_blank' button href='https://github.com/veglez' component={Button}>
+            <ListItem
+              target='_blank'
+              button
+              href='https://github.com/veglez'
+              component={Button}
+            >
               <ListItemIcon>
                 {' '}
                 <GitHub style={{ color: '#24292e' }} />{' '}
@@ -99,7 +118,12 @@ const Footer = () => {
               </ListItemIcon>
               <ListItemText primary='LinkedIn profile' />
             </ListItem>
-            <ListItem target='_blank' button href='https://dev.to/veglez' component={Button}>
+            <ListItem
+              target='_blank'
+              button
+              href='https://dev.to/veglez'
+              component={Button}
+            >
               <ListItemIcon>
                 {' '}
                 <FaDev style={{ fontSize: '1.25rem', color: '#363d44' }} />{' '}

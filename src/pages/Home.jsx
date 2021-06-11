@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Typography, Grid, makeStyles, Box, Divider } from '@material-ui/core';
+import React from 'react';
+import { Typography, Grid, makeStyles, Box, Button } from '@material-ui/core';
 import Styles from '../styles/pages/home.module.scss';
 import robotic from '../assets/images/free-robot.jpg';
 import IA from '../assets/images/artificial-intelligence.png';
@@ -12,6 +12,7 @@ import ListOfIcons from '../components/ListOfIcons/ListOfIcons';
 import AnimatedText from '../components/AnimatedText/AnimatedText';
 import AnimatedScrollDownIcon from '../components/AnimatedScrollDownIcon/AnimatedScrollDownIcon';
 import Diploma from '../components/Diploma/Diploma';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -123,17 +124,28 @@ const Home = () => {
             C pero fue python el que me sedujo al mundo de la programación, me
             cautivó la abstracción de ese lenguaje de alto nivel que permitía
             realizar proyectos de reconocimiento facial o árboles de decisiones
-            de forma muy sencilla. Aún utilizo pequeños script en python para
-            realizar actividades como optimizaciones imagenes, creación de hojas
-            de cálculo, manipulación de archivos; si veo que hay alguna
-            actividad que pueda acortarse u optimizarse con un script en python
-            lo hago, no estoy a favor de hacer las actividades repetitivas
-            siempre y cuando puedan automatizarse con algún algoritmo.
+            de forma muy sencilla. Actualmente utilizo python para realizar
+            actividades como optimizaciones imagenes, creación de hojas de
+            cálculo, manipulación de archivos; si veo que hay alguna actividad
+            que pueda acortarse u optimizarse con un script en python, lo hago;
+            las máquinas están para evitar que realicemos de manera repetitiva
+            nuestras actividades.
           </Typography>
           <Typography>
             El mundo de la ingeniería en general, la ciencia y principalmente la
             tecnología siempre me ha fascinado así en que la recta final de mis
-            estudios, llegada la hora de hacer mi tesis
+            estudios, llegada la hora de hacer mi tesis el Dr. Rogelio de Jesús
+            López Portillo me orientó en el tema de mi tesis: "Simulación de
+            robot de rehabilitación con controlador de impedancia variable".
+            Puedes leer mi tesis aquí:{' '}
+            <Button
+              variant='outlined'
+              color='primary'
+              component={'a'}
+              href={tesis}
+            >
+              Descargar Tesis
+            </Button>
           </Typography>
         </Grid>
         <Grid item xs={11} lg={10}>
