@@ -1,6 +1,5 @@
 import React from 'react';
-import Styles from '../styles/pages/certifications.module.scss';
-import { makeStyles, Grid, Typography, Box, Paper } from '@material-ui/core';
+import { makeStyles, Grid, Typography, Paper } from '@material-ui/core';
 import ListOfDiplomas from '../components/ListOfDiplomas/ListOfDiplomas';
 
 const useStyles = makeStyles((theme) => ({
@@ -31,20 +30,30 @@ const Certifications = () => {
       <Grid item xs={11} md={10}>
         <Typography variant='body1'>
           {' '}
-          En julio del 2020 decidí unirme a una comunidad dentro de <a>Platzi</a> la cual me ha ayudado a desarrollarme
-          profesionalmente en el área de la tecnología, sin duda la filosofía de Platzi de "Nunca parar de aprender" me
-          ha impulsado a continuar aprendiendo algo nuevo cada día.
+          En julio del 2020 decidí unirme a una comunidad dentro de{' '}
+          <a>Platzi</a> la cual me ha ayudado a desarrollarme profesionalmente
+          en el área de la tecnología, aunque no fue hasta inicio de este año en
+          el que le dediqué toda mi atención a la plataforma; sin duda la
+          filosofía de Platzi de "Nunca parar de aprender" me ha impulsado a
+          continuar aprendiendo algo nuevo cada día.
         </Typography>
         <Typography>
-          Junto con los cursos que ofrece la plataforma y la ayuda de la comunidad, he logrado avanzar constantemente en
-          adquirir el conocimiento para el desarrollo web enfocado en frontend.
+          Junto con los cursos que ofrece la plataforma y la ayuda de la
+          comunidad, he logrado avanzar constantemente en adquirir el
+          conocimiento para el desarrollo web enfocado en frontend.
         </Typography>
         <Typography>
-          La experiencia de programar con <span className={classes.code}>C</span> (programación imperativa) y{' '}
-          <span className={classes.code}>Python</span> (programación orientada a objetos) en la universidad me facilita
-          asimilar varios conceptos de javascript al ser un lenguaje multiparadigma.
+          La experiencia de programar con{' '}
+          <span className={classes.code}>C</span> y{' '}
+          <span className={classes.code}>Python</span> en la universidad me ha
+          facilitado asimilar varios conceptos de javascript al ser un lenguaje
+          multiparadigma.
         </Typography>
-        <Typography>Desde que entré a Platzi hasta la fecha he cursado y aprobado los siguientes cursos:</Typography>
+        <Typography>
+          "Nunca aparar de aprender", es lo mejor de esta vida ¿no?, siempre hay
+          algo mas que aprender. Desde que entré a Platzi hasta la fecha he
+          cursado y aprobado los siguientes cursos:
+        </Typography>
       </Grid>
       <Grid item xs={12} md={10}>
         <Paper elevation={10}>

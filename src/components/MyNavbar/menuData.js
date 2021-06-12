@@ -29,12 +29,12 @@ const listofitems = [
   {
     icon: FaRegFolderOpen,
     route: '/projects',
-    label: 'Projects',
+    label: 'Proyectos',
   },
   {
     icon: GiDiploma,
     route: '/certifications',
-    label: 'Certifications',
+    label: 'Certificados',
   },
 ];
 

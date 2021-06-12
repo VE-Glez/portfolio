@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Button,
+  IconButton,
   Card,
   CardContent,
   CardMedia,
@@ -12,17 +12,16 @@ import {
 import { Close } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
-  paperWidthFalse: {
-    maxWidth: 'calc(100% - 64px)',
-  },
-  paper: {
-    margin: theme.spacing(0, 'auto'),
-  },
   diploma: {
     height: 200,
   },
   diplomaDialog: {
     maxWidth: '100%',
+  },
+  dialogRoot: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   card: {
     wordBreak: 'break-word',
@@ -42,10 +41,10 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 90,
   },
   closeButton: {
-    width: '100%',
+    width: 'fit-content',
     display: 'flex',
     justifyContent: 'flex-end',
-    backgroundColor: theme.palette.primary.light,
+    // backgroundColor: theme.palette.primary.light,
   },
 }));
 
@@ -73,19 +72,15 @@ export default function Diploma({ itemN }) {
         onClose={handleClose}
         scroll='body'
         maxWidth={false}
-        classes={{
-          paperWidthFalse: classes.paperWidthFalse,
-          paper: classes.paper,
-        }}
       >
-        <DialogContent tabIndex='0'>
-          <Button
+        <DialogContent classes={{ root: classes.dialogRoot }} tabIndex='0'>
+          <IconButton
             variant='contained'
             onClick={handleClose}
             className={classes.closeButton}
           >
             <Close />
-          </Button>
+          </IconButton>
           <img
             className={classes.diplomaDialog}
             src={itemN.diploma}

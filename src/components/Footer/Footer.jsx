@@ -10,12 +10,7 @@ import {
   Grid,
 } from '@material-ui/core';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import {
-  GitHub,
-  LinkedIn,
-  PhoneAndroidOutlined,
-  Twitter,
-} from '@material-ui/icons';
+import { GitHub, LinkedIn, PhoneAndroidOutlined } from '@material-ui/icons';
 import { FaDev, FaTwitter } from 'react-icons/fa';
 
 const useStyles = makeStyles((theme) => ({
@@ -78,7 +73,7 @@ const Footer = () => {
               </ListItemIcon>
               <ListItemText primary='@VE_Glez' />
             </ListItem>
-            <ListItem
+            {/* <ListItem
               target='_blank'
               button
               href='tel:+522293390918'
@@ -89,7 +84,7 @@ const Footer = () => {
                 <PhoneAndroidOutlined style={{ color: '#00436b' }} />{' '}
               </ListItemIcon>
               <ListItemText primary='Call me' />
-            </ListItem>
+            </ListItem> */}
           </List>
         </Grid>
         <Grid item xs={6}>
@@ -118,7 +113,7 @@ const Footer = () => {
               </ListItemIcon>
               <ListItemText primary='LinkedIn profile' />
             </ListItem>
-            <ListItem
+            {/* <ListItem
               target='_blank'
               button
               href='https://dev.to/veglez'
@@ -129,7 +124,7 @@ const Footer = () => {
                 <FaDev style={{ fontSize: '1.25rem', color: '#363d44' }} />{' '}
               </ListItemIcon>
               <ListItemText primary='Check my blog' />
-            </ListItem>
+            </ListItem> */}
           </List>
         </Grid>
       </Grid>

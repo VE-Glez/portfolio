@@ -1,6 +1,8 @@
 import babel from '@icons/babel.png';
 import css3 from '@icons/css3.png';
 import eslint from '@icons/eslint.png';
+import prettier from '@icons/prettier.png';
+import typescript from '@icons/typescript.png';
 import figma from '@icons/figma.png';
 import html5 from '@icons/html5.png';
 import javascript from '@icons/javascript.png';
@@ -69,6 +71,18 @@ const data = [
     href: 'https://eslint.org/',
     alt: 'eslint icon',
     name: 'eslint',
+  },
+  {
+    icon: prettier,
+    href: 'https://prettier.io/',
+    alt: 'prettier icon',
+    name: 'prettier',
+  },
+  {
+    icon: typescript,
+    href: 'https://www.typescriptlang.org/',
+    alt: 'typescript icon',
+    name: 'typescript',
   },
   {
     icon: npm,

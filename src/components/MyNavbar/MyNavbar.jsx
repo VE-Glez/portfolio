@@ -2,19 +2,15 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {  Slide, useScrollTrigger } from '@material-ui/core';
+import { Slide, useScrollTrigger } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useStyles } from './styles';
-import AuxiliarBackButton from './AuxiliarBackButton';
 import BackToTop from '../BackToTop';
 import NavLinks from './NavLinks';
 
 function HideOnScroll(props) {
-  const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+  const { children } = props;
+  const trigger = useScrollTrigger();
 
   return (
     //in={!trigger}
@@ -26,7 +22,6 @@ function HideOnScroll(props) {
 
 export default function MyNavbar() {
   const classes = useStyles();
-  
 
   return (
     <>
@@ -38,13 +33,11 @@ export default function MyNavbar() {
             </Typography>
             <span className={classes.grow}></span>
             <NavLinks />
-            
           </Toolbar>
         </AppBar>
       </HideOnScroll>
 
       <Toolbar id={'back-to-top'} />
-      <AuxiliarBackButton />
       <BackToTop anchorEl='back-to-top' />
     </>
   );

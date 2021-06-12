@@ -1,18 +1,13 @@
 import {
-  Box,
   Button,
   Card,
   CardActions,
   CardContent,
   CardHeader,
   CardMedia,
-  IconButton,
-  Menu,
-  MenuItem,
   Typography,
 } from '@material-ui/core';
-import { Add, Facebook, GitHub, MoreVertRounded } from '@material-ui/icons';
-import React, { useState } from 'react';
+import React from 'react';
 import { projectCardStyles } from './projectCardStyles';
 
 const ProjectCard = ({
@@ -24,41 +19,14 @@ const ProjectCard = ({
   linkOnline,
 }) => {
   const classes = projectCardStyles();
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handleOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <>
       <Card elevation={5} className={classes.card}>
         <CardHeader
           classes={{ root: classes.header }}
-          // action={
-          //   <IconButton onClick={handleOpen}>
-          //     <MoreVertRounded />
-          //   </IconButton>
-          // }
           title={title}
-          subheader={
-            <Typography>{subtitle}</Typography>
-            // <Box>
-            //   <IconButton>
-            //     <Add />
-            //   </IconButton>
-            //   <IconButton>
-            //     <GitHub />
-            //   </IconButton>
-            //   <IconButton>
-            //     <Facebook />
-            //   </IconButton>
-            // </Box>
-          }
+          subheader={<Typography>{subtitle}</Typography>}
         />
         <CardMedia image={image} style={{ height: 200 }} />
         <CardContent classes={{ root: classes.content }}>
@@ -87,17 +55,6 @@ const ProjectCard = ({
           </Button>
         </CardActions>
       </Card>
-      <Menu
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        transitionDuration={1000}
-        //anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-      >
-        <MenuItem onClick={handleClose}>Get suscribe</MenuItem>
-        <MenuItem onClick={handleClose}>Shoud be more options?</MenuItem>
-      </Menu>
     </>
   );
 };

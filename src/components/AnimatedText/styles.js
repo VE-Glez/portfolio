@@ -14,11 +14,12 @@ const Paragraph = styled.p`
   background: linear-gradient(90deg, black, white, black);
   background-size: 80%;
   background-repeat: no-repeat;
-  animation: ${animate} 3500ms ease-in-out infinite;
+  /* animation: ${animate} 3500ms ease-in-out infinite; */
   background-clip: text;
   color: white;
   /* overflow-x: scroll; */
   height: 100px;
+  font-size: 2.5em;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;

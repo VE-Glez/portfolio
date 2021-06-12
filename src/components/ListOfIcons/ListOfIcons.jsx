@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Button, makeStyles } from '@material-ui/core';
+import { Box, makeStyles } from '@material-ui/core';
 import IconSkill from '../IconSkill/IconSkill';
 import data from './cardsInfo';
-import { v4 } from 'uuid';
 
 const useStyles = makeStyles((theme) => ({
   iconsWrapper: {
@@ -19,7 +18,9 @@ export default function ListOfIcons() {
   const classes = useStyles();
   return (
     <Box className={classes.iconsWrapper}>
-      {data.map((item) => React.cloneElement(<IconSkill {...item} />, { key: v4() }))}
+      {data.map((item) =>
+        React.cloneElement(<IconSkill {...item} />, { key: item.name })
+      )}
     </Box>
   );
 }

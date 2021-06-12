@@ -1,45 +1,38 @@
-import { makeStyles, Typography } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { animated, useSpring } from '@react-spring/web';
 import Paragraph from './styles';
 
-const useStyles = makeStyles((theme) => ({
-  '@keyframes animate': {
-    '0%': {
-      backgroundPosition: '-500%',
-    },
-    '100%': {
-      backgroundPosition: '500%',
-    },
-  },
-  letters: {
-    display: 'inline-block',
-    fontSize: '2.5em',
-    background: 'linear-gradient(90deg, black 10%, white, black 90%)',
-    backgroundSize: '80%',
-    backgroundRepeat: 'no-repeat',
-    animation: `$animate 5s ${theme.transitions.easing.easeInOut} infinite`,
-    color: 'white',
-    // WebkitBackgroundClip: 'text',
-    // WebkitTextFillColor: 'transparent',
-  },
-}));
-
-const AnimatedText = ({ words = ['Ingeniero mecatrónico', 'Desarrollador frontend', 'Amante de la tecnología'] }) => {
+const AnimatedText = ({
+  words = [
+    'Ingeniero mecatrónico',
+    'Desarrollador frontend',
+    'Amante de la tecnología',
+  ],
+}) => {
   const [index, setIndex] = useState(0);
-  const classes = useStyles();
-
-  useEffect(() => {
-    let changeWord = setTimeout(() => {
+  // const classes = useStyles();
+  const RenderAnimatedText = animated(Paragraph);
+  const syles = useSpring({
+    from: { backgroundPosition: '-500%' },
+    to: { backgroundPosition: '500%' },
+    config: {
+      mass: 100,
+      friction: 150,
+      tension: 40,
+      frequency: 6,
+      damping: 0.8,
+    },
+    reset: true,
+    loop: () => {
       if (index >= words.length - 1) {
-        setIndex(0);
+        return setIndex(0);
       } else {
-        setIndex(index + 1);
+        return setIndex(index + 1);
       }
-    }, 3410);
-    return () => clearTimeout(changeWord);
-  }, [index]);
+    },
+  });
 
-  return <Paragraph className={classes.letters}>{words[index]}</Paragraph>;
+  return <RenderAnimatedText style={syles}>{words[index]}</RenderAnimatedText>;
 };
 
 export default AnimatedText;

@@ -22,10 +22,10 @@ export const cardsInfo = [
   {
     id: 'capi',
     title: 'Countries API',
-    subtitle: 'With dark theme',
+    subtitle: 'Con dark theme',
     image: capi,
     description:
-      'Uso de una API pública, react hooks para el dark theme y el fetch de datos.',
+      'Uso de una API pública, react hooks para el dark theme y el fetch de datos. Además cuenta con varios filtros que pueden combinarse para afinar las búsquedas.',
     linkRepo: 'https://github.com/veglez/countries-api',
     linkOnline: 'https://countries-api-six.vercel.app/',
   },
@@ -52,7 +52,7 @@ export const cardsInfo = [
   {
     id: 'compendium',
     title: 'FrontendMentor compendium',
-    subtitle: 'A bunch of projects',
+    subtitle: 'Un paquete de proyectos',
     image: compendium,
     description:
       'Uso de python como algoritmo principal para configurar todo el espacio de trabajo. Utiliza material-ui para la interfaz principal pero cada uno de los proyectos utiliza hojas de estilo a parte en SASS y algunos con styled components.',
@@ -62,7 +62,7 @@ export const cardsInfo = [
   {
     id: 'pomodoro',
     title: 'Pomodoro',
-    subtitle: 'A simple pomodoro clock',
+    subtitle: 'Una app de productividad',
     image: pomodoro,
     description:
       'Mi primer proyecto con react, inspirado en una aplicación de escritorio existente.',

@@ -136,15 +136,27 @@ const Home = () => {
             tecnología siempre me ha fascinado así en que la recta final de mis
             estudios, llegada la hora de hacer mi tesis el Dr. Rogelio de Jesús
             López Portillo me orientó en el tema de mi tesis: "Simulación de
-            robot de rehabilitación con controlador de impedancia variable".
-            Puedes leer mi tesis aquí:{' '}
+            robot de rehabilitación con controlador de impedancia variable". Mi
+            enfoque principal fue a la programación, se basa principalmente en
+            controlar la impedancia de un robot de rehabilitación para
+            extremidades superiores a través de un algoritmo de decisión binaria
+            llamado{' '}
+            <Typography
+              variant='subtitle1'
+              color='textSecondary'
+              component='span'
+            >
+              Win-stay Lose-Switch
+            </Typography>
+            . Emula el comportamiento del humano cuando se enfrenta a una tarea
+            de decisión forzada entre 2 decisiones.{' '}
             <Button
               variant='outlined'
               color='primary'
               component={'a'}
               href={tesis}
             >
-              Descargar Tesis
+              Puedes leer mi tesis aquí
             </Button>
           </Typography>
         </Grid>
@@ -158,11 +170,26 @@ const Home = () => {
             Tecnologías
           </Typography>
           <Typography align='justify'>
-            El desarrollo de la tecnología me ha parecido fascinante , considero
-            que esta ha sido la mejor época para nacer, todo crece y evoluciona
-            demasiado rápido y quiero ser parte de esa evolución, por ello
-            aprendido herramientas que me llevarán a convertirme en un ingeniero
-            que
+            Al enfocarme mas en la programación y ver la increible evolución de
+            la web solo pude verlo como una oporturnidad de hacer que los
+            algoritmos pudieran vivir en la nube y ser accesibles desde
+            cualquier dispositivo; con acceso a internet se puede tener a la
+            mano cualquier herramienta que uno desee. Por tal motivo considero
+            al desarrollo web una herramienta muy importante, y frontend es el
+            primer paso, es el medio por el cual nos podemos comunicar con todas
+            estas herramientas. Pero esto va mas allá, al inicio uno tenía que
+            programar para diferentes plataformas y se tenía que invertir
+            demasiado tiempo y dinero en encontrar una forma de encontrar
+            uniformidad entre plataformas, pero cada vez avanza mas el
+            desarrollo web al punto de tener PWA's, lo que trae ventajas
+            similares a una aplicación nativa, sin duda el desarrollo web tiene
+            un gran futuro por delante.Asi que para entrar a todo este mundo
+            decidí enfocarme en el mundo del frontend (el cual considero mas
+            complicado porque vengo mas de hacer algoritmos para el backend).
+          </Typography>
+          <Typography>
+            Dentro de las herramientas que he utilizado y sé trabajar se
+            encuentran las siguientes:
           </Typography>
           <ListOfIcons />
         </Grid>

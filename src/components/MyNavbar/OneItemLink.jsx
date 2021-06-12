@@ -9,9 +9,16 @@ import {
   ListItemText,
   makeStyles,
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
+
 const useStyles = makeStyles((theme) => ({
+  itemWithOptions: {
+    display: 'flex',
+    [theme.breakpoints.down('md')]: {
+      borderBlockEnd: `1px solid ${theme.palette.grey[500]}`,
+    },
+  },
   nested: {
     paddingLeft: theme.spacing(2),
     [theme.breakpoints.down('md')]: {
@@ -24,9 +31,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
-      '& .MuiListItem-button': {
-        borderBlockEnd: `1px solid ${theme.palette.grey[500]}`,
-      },
+      // '& .MuiListItem-button': {
+      //   borderBlockEnd: `1px solid ${theme.palette.grey[500]}`,
+      // },
     },
   },
   collapse: {
@@ -44,6 +51,12 @@ const useStyles = makeStyles((theme) => ({
       marginBlockStart: theme.spacing(0),
     },
   },
+  arrowIcon: {
+    color: 'white',
+    [theme.breakpoints.down('md')]: {
+      color: 'black',
+    },
+  },
 }));
 
 const body = document.querySelector('body');
@@ -52,21 +65,26 @@ const OneItemLink = ({ itemN, openDrawer }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [target, setTarget] = useState('');
-  const anchor = document.getElementById(target);
-  //anchor siempre guarda el ultimo valor, después de dar click a algun item de inner list, éste debería también cambiar su target a cero para que pueda volver a scrolear
-  //porque el scroll solo es posible durante el "componentShouldUpdate" y solo se cumple cuando target ha cambiado
+  //anchor siempre guarda el ultimo valor, después de dar click a algun item
+  //de inner list, éste debería también cambiar su target a cero para
+  //que pueda volver a scrolear porque el scroll solo es posible
+  // durante el "componentShouldUpdate" y solo se cumple cuando target ha cambiado
   useEffect(() => {
+    console.log(anchor);
+    const anchor = document.getElementById(target);
     if (anchor) {
       anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setOpen(false);
       openDrawer(false);
     }
-    return setTarget('');
+    return () => setTarget('');
   }, [target]);
 
   const handleInnerListClick = (event) => {
+    console.log(event.currentTarget);
     body.style = {};
     setTarget(event.currentTarget.dataset.targetid);
+    // setTimeout(() => , 10);
   };
   const handleClick = () => {
     setOpen(!open);
@@ -85,22 +103,28 @@ const OneItemLink = ({ itemN, openDrawer }) => {
   return (
     <Box className={classes.boxItemWrapper}>
       <>
-        <ListItem
-          button
-          component={Link}
-          to={itemN.route}
-          onClick={!itemN.nested ? handleClose : null}
-          style={{ paddingBottom: 0 }}
-        >
-          <ListItemIcon>{React.createElement(itemN.icon)}</ListItemIcon>
-          <ListItemText primary={itemN.label} />
+        <Box className={classes.itemWithOptions}>
+          <ListItem
+            button
+            component={Link}
+            to={itemN.route}
+            onClick={!itemN.nested ? handleClose : null}
+            style={{ paddingBottom: 0 }}
+          >
+            <ListItemIcon>{React.createElement(itemN.icon)}</ListItemIcon>
+            <ListItemText primary={itemN.label} />
+          </ListItem>
           {itemN.nested && (
             <IconButton onClick={handleClick} onBlur={handleBlur}>
-              {open ? <ExpandLess /> : <ExpandMore />}
+              {open ? (
+                <ExpandLess className={classes.arrowIcon} />
+              ) : (
+                <ExpandMore className={classes.arrowIcon} />
+              )}
             </IconButton>
           )}
-        </ListItem>
-        {itemN.nested && open && (
+        </Box>
+        {itemN.nested && (
           <Collapse
             className={classes.collapse}
             in={open}
@@ -112,7 +136,8 @@ const OneItemLink = ({ itemN, openDrawer }) => {
                 return React.cloneElement(
                   <ListItem
                     className={classes.nested}
-                    button
+                    component={Link}
+                    to={itemN.route}
                     data-targetid={item.targetId}
                     onClick={handleInnerListClick}
                   >
