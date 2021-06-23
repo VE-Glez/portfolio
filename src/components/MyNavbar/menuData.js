@@ -17,12 +17,12 @@ const listofitems = [
       {
         icon: FaToolbox,
         targetId: 'technologies',
-        label: 'Habilidades',
+        label: 'Tecnologías',
       },
       {
         icon: FaAddressCard,
         targetId: 'contact-me',
-        label: 'Contact me',
+        label: 'Contáctame',
       },
     ],
   },

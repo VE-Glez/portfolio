@@ -10,7 +10,11 @@ import {
   Grid,
 } from '@material-ui/core';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { GitHub, LinkedIn, PhoneAndroidOutlined } from '@material-ui/icons';
+import {
+  GitHub,
+  LinkedIn,
+  PhoneAndroidOutlined,
+} from '@material-ui/icons';
 import { FaDev, FaTwitter } from 'react-icons/fa';
 
 const useStyles = makeStyles((theme) => ({
@@ -43,7 +47,7 @@ const Footer = () => {
       <Grid container justify='center' className={classes.mainGrid}>
         <Grid item xs={12}>
           <Typography align='center' variant='h5' color='textPrimary'>
-            Contact me
+            Contáctame
           </Typography>
         </Grid>
         <Grid item xs={6}>

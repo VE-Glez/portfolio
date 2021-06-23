@@ -1,5 +1,11 @@
 import React from 'react';
-import { Typography, Grid, makeStyles, Box, Button } from '@material-ui/core';
+import {
+  Typography,
+  Grid,
+  makeStyles,
+  Box,
+  Button,
+} from '@material-ui/core';
 import Styles from '../styles/pages/home.module.scss';
 import robotic from '../assets/images/free-robot.jpg';
 import IA from '../assets/images/artificial-intelligence.png';
@@ -92,21 +98,27 @@ const Home = () => {
           <AnimatedScrollDownIcon className={classes.seeMore} />
         </Grid>
         <Grid item xs={11} lg={10} className={classes.aboutMe}>
-          <Typography id='about-me' variant='h4' component='h2' align='center'>
+          <Typography
+            id='about-me'
+            variant='h4'
+            component='h2'
+            align='center'
+          >
             Acerca de mí
           </Typography>
           <Typography>
-            Nací el 14 de Octubre de 1994, actualmente resido en el puerto de
-            Veracruz, en México. Estudié ingeniería mecatrónica porque desde
-            pequeño me ha llamado la atención la tecnología, me fascina lo que
-            puede lograrse con las máquinas, sin duda son una forma de mejorar
-            la calidad de vida; durante me estadía en la universidad, la Dr.
-            Andrea Guadalupe Martínez López me dio la oportunidad de participar
-            en cursos que se llevaron a cabo en el departamento de investigación
-            en micro y nanotecnología (MICRONA) la cual se encontraba en la
-            facultad en la que estudiaba, ahi pude y asimilar el ambiente en el
-            mundo de la investigación, realmente fue una experiencia muy grata.
-            Fue donde aprendí mas a profundidad sobre electrónica y mas
+            Nací el 14 de Octubre de 1994, actualmente resido en el puerto
+            de Veracruz, en México. Estudié ingeniería mecatrónica porque
+            desde pequeño me ha llamado la atención la tecnología, me
+            fascina lo que puede lograrse con las máquinas, sin duda son
+            una forma de mejorar la calidad de vida; durante mis estudios
+            universitarios, la Dra. Andrea Guadalupe Martínez López me dio
+            la oportunidad de participar en cursos que se llevaron a cabo
+            en el departamento de investigación en micro y nanotecnología
+            (MICRONA) la cual se encontraba en la facultad en la que
+            estudiaba, ahi pude asimilar el ambiente en el mundo de la
+            investigación, realmente fue una experiencia muy grata. Fue
+            donde aprendí mas a profundidad sobre electrónica,
             específicamente sobre física de semiconductores.
           </Typography>
           <Diploma
@@ -116,31 +128,30 @@ const Home = () => {
             }}
           />
           <Typography>
-            A pesar de que me hubiera gustado continuar pasé por algunos
-            problemas familiares/económicos que hicieron que mi vida tomara otro
-            rumbo; fui avanzando en mis estudios universitarios y llegué al
-            mundo de la programación en python e introducción a la inteligencia
-            artificial; en mi primer año había tomado cursos en programación en
-            C pero fue python el que me sedujo al mundo de la programación, me
-            cautivó la abstracción de ese lenguaje de alto nivel que permitía
-            realizar proyectos de reconocimiento facial o árboles de decisiones
-            de forma muy sencilla. Actualmente utilizo python para realizar
-            actividades como optimizaciones imagenes, creación de hojas de
-            cálculo, manipulación de archivos; si veo que hay alguna actividad
-            que pueda acortarse u optimizarse con un script en python, lo hago;
-            las máquinas están para evitar que realicemos de manera repetitiva
-            nuestras actividades.
+            Fui avanzando en mis estudios universitarios y llegué al mundo
+            de la programación en python e introducción a la inteligencia
+            artificial; en mi primer año había tomado cursos en
+            programación en C pero fue python el que me sedujo al mundo de
+            la programación, me cautivó la abstracción de ese lenguaje de
+            alto nivel que permitía realizar proyectos de reconocimiento
+            facial o árboles de decisiones de forma muy sencilla.
+            Actualmente utilizo python para realizar actividades como
+            optimizaciones imagenes, creación de hojas de cálculo,
+            manipulación de archivos; si veo que hay alguna actividad que
+            pueda acortarse u optimizarse con un script en python, lo hago;
+            las máquinas están para evitar que realicemos de manera
+            repetitiva nuestras actividades.
           </Typography>
           <Typography>
-            El mundo de la ingeniería en general, la ciencia y principalmente la
-            tecnología siempre me ha fascinado así en que la recta final de mis
-            estudios, llegada la hora de hacer mi tesis el Dr. Rogelio de Jesús
-            López Portillo me orientó en el tema de mi tesis: "Simulación de
-            robot de rehabilitación con controlador de impedancia variable". Mi
-            enfoque principal fue a la programación, se basa principalmente en
-            controlar la impedancia de un robot de rehabilitación para
-            extremidades superiores a través de un algoritmo de decisión binaria
-            llamado{' '}
+            El mundo de la ingeniería en general, la ciencia y
+            principalmente la tecnología siempre me ha fascinado así en que
+            la recta final de mis estudios, llegada la hora de hacer mi
+            tesis el Dr. Rogelio de Jesús López Portillo me orientó en el
+            tema de mi tesis: "Simulación de robot de rehabilitación con
+            controlador de impedancia variable". Mi enfoque principal fue a
+            la programación, se basa principalmente en controlar la
+            impedancia de un robot de rehabilitación para extremidades
+            superiores a través de un algoritmo de decisión binaria llamado{' '}
             <Typography
               variant='subtitle1'
               color='textSecondary'
@@ -148,8 +159,8 @@ const Home = () => {
             >
               Win-stay Lose-Switch
             </Typography>
-            . Emula el comportamiento del humano cuando se enfrenta a una tarea
-            de decisión forzada entre 2 decisiones.{' '}
+            . Emula el comportamiento del humano cuando se enfrenta a una
+            tarea de decisión forzada entre 2 decisiones.{' '}
             <Button
               variant='outlined'
               color='primary'
@@ -170,22 +181,24 @@ const Home = () => {
             Tecnologías
           </Typography>
           <Typography align='justify'>
-            Al enfocarme mas en la programación y ver la increible evolución de
-            la web solo pude verlo como una oporturnidad de hacer que los
-            algoritmos pudieran vivir en la nube y ser accesibles desde
-            cualquier dispositivo; con acceso a internet se puede tener a la
-            mano cualquier herramienta que uno desee. Por tal motivo considero
-            al desarrollo web una herramienta muy importante, y frontend es el
-            primer paso, es el medio por el cual nos podemos comunicar con todas
-            estas herramientas. Pero esto va mas allá, al inicio uno tenía que
-            programar para diferentes plataformas y se tenía que invertir
-            demasiado tiempo y dinero en encontrar una forma de encontrar
-            uniformidad entre plataformas, pero cada vez avanza mas el
-            desarrollo web al punto de tener PWA's, lo que trae ventajas
-            similares a una aplicación nativa, sin duda el desarrollo web tiene
-            un gran futuro por delante.Asi que para entrar a todo este mundo
-            decidí enfocarme en el mundo del frontend (el cual considero mas
-            complicado porque vengo mas de hacer algoritmos para el backend).
+            Al enfocarme mas en la programación y ver la increible
+            evolución de la web solo pude verlo como una oporturnidad de
+            hacer que los algoritmos pudieran vivir en la nube y ser
+            accesibles desde cualquier dispositivo; con acceso a internet
+            se puede tener a la mano cualquier herramienta que uno desee.
+            Por tal motivo considero al desarrollo web una herramienta muy
+            importante, y frontend es el primer paso, es el medio por el
+            cual nos podemos comunicar con todas estas herramientas. Pero
+            esto va mas allá, al inicio uno tenía que programar para
+            diferentes plataformas y se tenía que invertir demasiado tiempo
+            y dinero en encontrar una forma de encontrar uniformidad entre
+            plataformas, pero cada vez avanza mas el desarrollo web al
+            punto de tener PWA's, lo que trae ventajas similares a una
+            aplicación nativa, sin duda el desarrollo web tiene un gran
+            futuro por delante.Asi que para entrar a todo este mundo decidí
+            enfocarme en el mundo del frontend (el cual considero mas
+            complicado porque vengo mas de hacer algoritmos para el
+            backend).
           </Typography>
           <Typography>
             Dentro de las herramientas que he utilizado y sé trabajar se

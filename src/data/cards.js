@@ -1,6 +1,3 @@
-import { Typography } from '@material-ui/core';
-import React from 'react';
-import { SiStyledComponents, SiReact, SiMaterialUi } from 'react-icons/si';
 import rpsg from '@images/rock-papper-scissors.vercel.app_.png';
 import capi from '@images/countries-api-six.vercel.app_.png';
 import rAmapi from '@images/rick-and-morty-api-alpha.vercel.app_.png';
@@ -15,14 +12,14 @@ export const cardsInfo = [
     subtitle: 'Con versión extendida',
     image: rpsg,
     description:
-      'Hecho con react hook: useContext y también con styled components',
+      'Hecho con react hooks: useContext para el score y cambiar a la versión extendida, estilizado con styled components.',
     linkRepo: 'https://github.com/veglez/rockPapperScissors',
     linkOnline: 'https://rock-papper-scissors.vercel.app/',
   },
   {
     id: 'capi',
     title: 'Countries API',
-    subtitle: 'Con dark theme',
+    subtitle: 'Una Progressive web app',
     image: capi,
     description:
       'Uso de una API pública, react hooks para el dark theme y el fetch de datos. Además cuenta con varios filtros que pueden combinarse para afinar las búsquedas.',
@@ -34,18 +31,17 @@ export const cardsInfo = [
     title: 'Rick and Morty API',
     subtitle: 'Reack Hooks',
     image: rAmapi,
-    description:
-      'Uso de hooks useReducer con useContext para cambiar temas y es escalable para agregar mas temas en el futuro, además posee un scroll infinito (hasta acabar de consumir los datos de la API).',
+    description: `Uso de custom hooks para solamente cargar los datos mientras lo van requiriendo los usuarios, además posee un scroll infinito (hasta acabar de consumir los datos de la API).`,
     linkRepo: 'https://github.com/veglez/rick-and-morty-api',
     linkOnline: 'https://rick-and-morty-api-alpha.vercel.app/',
   },
   {
     id: 'calculator',
     title: 'Calculator',
-    subtitle: 'Reack Hooks',
+    subtitle: 'A PWA works with keyboard on desktop',
     image: calculator,
     description:
-      'Uso Typescript en la lógica para realizar la calculadora, react hooks para manejar los temas.',
+      'Uso de Typescript en la lógica para realizar la calculadora, react hooks para manejar los temas.',
     linkRepo: 'https://github.com/veglez/calculator',
     linkOnline: 'https://calculator-sigma-lime.vercel.app/',
   },
@@ -59,14 +55,14 @@ export const cardsInfo = [
     linkRepo: 'https://github.com/veglez/frontend-compendium',
     linkOnline: 'https://frontend-compendium.vercel.app/',
   },
-  {
-    id: 'pomodoro',
-    title: 'Pomodoro',
-    subtitle: 'Una app de productividad',
-    image: pomodoro,
-    description:
-      'Mi primer proyecto con react, inspirado en una aplicación de escritorio existente.',
-    linkRepo: 'https://github.com/veglez/pomodoro-clone',
-    linkOnline: 'https://pomodoro-clone.vercel.app/',
-  },
+  // {
+  //   id: 'pomodoro',
+  //   title: 'Pomodoro',
+  //   subtitle: 'Una app de productividad',
+  //   image: pomodoro,
+  //   description:
+  //     'Mi primer proyecto con react, inspirado en una aplicación de escritorio existente.',
+  //   linkRepo: 'https://github.com/veglez/pomodoro-clone',
+  //   linkOnline: 'https://pomodoro-clone.vercel.app/',
+  // },
 ];

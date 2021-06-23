@@ -50,7 +50,7 @@ const Certifications = () => {
           multiparadigma.
         </Typography>
         <Typography>
-          "Nunca aparar de aprender", es lo mejor de esta vida ¿no?, siempre hay
+          "Nunca parar de aprender", es lo mejor de esta vida ¿no?, siempre hay
           algo mas que aprender. Desde que entré a Platzi hasta la fecha he
           cursado y aprobado los siguientes cursos:
         </Typography>

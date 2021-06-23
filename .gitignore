@@ -1,3 +1,6 @@
 node_modules
 arbol.txt
 dist
+
+yarn.lock
+package-lock.json
