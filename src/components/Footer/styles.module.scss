@@ -1,0 +1,76 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background: #f2f2f2;
+  box-shadow: 1px -1px 3px 1px rgba(10, 10, 10, 0.25);
+
+  div:first-child p {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.25em;
+  }
+}
+
+.icons {
+  width: 65%;
+  text-align: center;
+}
+
+.icons__after {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .footer {
+    flex-wrap: initial;
+    padding: 16px 64px;
+    justify-content: space-between;
+
+    div:first-child p {
+      text-align: left;
+      margin-inline-start: 15px;
+    }
+
+    div:last-child {
+      align-self: flex-end;
+    }
+  }
+
+  .icons {
+    text-align: initial;
+  }
+  .icons a {
+    position: relative;
+
+    svg {
+      fill: #bdbdbd !important;
+    }
+    &:hover svg {
+      fill: var(--color) !important;
+    }
+
+    &:hover button {
+      box-shadow: inset 0 0 4px 1px var(--color);
+    }
+
+    &:hover .icon__after {
+      transform: translateY(-45px);
+      transition: 0.65s;
+    }
+  }
+
+  .icon__after {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: -15px;
+    height: 1px;
+    border: 1px solid var(--color);
+    z-index: 10;
+    transition: 0.65s;
+  }
+}
