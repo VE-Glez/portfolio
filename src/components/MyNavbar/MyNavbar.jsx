@@ -1,44 +1,51 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { Slide, useScrollTrigger } from '@material-ui/core';
-import { Link } from 'react-router-dom';
-import { useStyles } from './styles';
-import BackToTop from '../BackToTop';
-import NavLinks from './NavLinks';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { CgClose } from 'react-icons/cg';
+import styles from './styles.module.scss';
+import listofitems from './menuData';
+import OneItem from './OneItem';
+import { useState } from 'react';
+import Footer from '@components/Footer/Footer';
+import { useEffect } from 'react';
+import clsx from 'clsx';
 
-function HideOnScroll(props) {
-  const { children } = props;
-  const trigger = useScrollTrigger();
+const MyNavbar = () => {
+  const [open, setOpen] = useState(false);
 
-  return (
-    //in={!trigger}
-    <Slide appear={false} direction='down' in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
+  useEffect(() => {
+    open
+      ? document.body.classList.add('menu_active')
+      : document.body.classList.remove('menu_active');
+  }, [open]);
 
-export default function MyNavbar() {
-  const classes = useStyles();
+  const handleClick = (e) => {
+    setOpen(!open);
+  };
 
   return (
     <>
-      <HideOnScroll>
-        <AppBar position='fixed' color='primary'>
-          <Toolbar>
-            <Typography variant='h6' component={Link} to='/'>
-              Veglez
-            </Typography>
-            <span className={classes.grow}></span>
-            <NavLinks />
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
-
-      <Toolbar id={'back-to-top'} />
-      <BackToTop anchorEl='back-to-top' />
+      <div className={styles.appbar}>
+        <div
+          id='wrapper'
+          className={clsx(styles.wrapper, open && styles.wrapper__open)}
+        >
+          <nav className={styles.navbar}>
+            {listofitems.map((item) => (
+              <OneItem
+                key={item.label}
+                {...item}
+                handleClose={() => setOpen(false)}
+              />
+            ))}
+          </nav>
+          <Footer />
+        </div>
+        <span onClick={handleClick} className={styles.icon__burguer}>
+          {open ? <CgClose /> : <GiHamburgerMenu />}
+        </span>
+      </div>
     </>
   );
-}
+};
+
+export default MyNavbar;

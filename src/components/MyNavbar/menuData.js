@@ -1,40 +1,46 @@
 import { FaRegFolderOpen, FaToolbox, FaAddressCard } from 'react-icons/fa';
 import { GiDiploma } from 'react-icons/gi';
 import { AiFillHome } from 'react-icons/ai';
+import { GoSettings } from 'react-icons/go';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 
 const listofitems = [
   {
     icon: AiFillHome,
-    route: '/',
+    href: '/',
     label: 'Home',
     nested: [
       {
-        icon: PermIdentityIcon,
-        targetId: 'about-me',
-        label: 'Acerca de mi',
+        icon: GoSettings,
+        href: '/#programmingPrinciples',
+        label: 'Principios de desarrollo',
       },
       {
         icon: FaToolbox,
-        targetId: 'technologies',
+        href: '/#technologies',
         label: 'Tecnologías',
       },
       {
+        icon: FaRegFolderOpen,
+        href: '/#projects',
+        label: 'Proyectos',
+      },
+      {
         icon: FaAddressCard,
-        targetId: 'contact-me',
+        href: '/#contact-me',
         label: 'Contáctame',
       },
     ],
   },
   {
-    icon: FaRegFolderOpen,
-    route: '/projects',
-    label: 'Proyectos',
+    icon: GiDiploma,
+    href: '/certifications',
+    label: 'Certificados',
   },
   {
-    icon: GiDiploma,
-    route: '/certifications',
-    label: 'Certificados',
+    icon: PermIdentityIcon,
+    href: '/about-me',
+    label: 'Acerca de mi',
   },
 ];
 
