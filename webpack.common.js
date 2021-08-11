@@ -11,16 +11,22 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       '@icons': path.join(__dirname, 'src/assets/icons-technologies'),
       '@diplomas': path.resolve(__dirname, 'src/assets/diplomas-images'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@assets': path.resolve(__dirname, 'src/assets/'),
+      '@components': path.resolve(__dirname, 'src/components/'),
     },
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -37,7 +43,7 @@ module.exports = {
         use: ['html-loader'],
       },
       {
-        test: /\.(png|jpg|svg|jpeg|webp)$/,
+        test: /\.(png|jpg|svg|jpeg|webp|.ttf)$/,
         type: 'asset/resource',
       },
       {
