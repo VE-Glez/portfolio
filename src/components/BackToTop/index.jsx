@@ -1,40 +1,36 @@
-import React from 'react';
-import { useScrollTrigger, Zoom, Fab } from '@material-ui/core';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useEffect, useRef } from 'react';
+import { HashLink } from 'react-router-hash-link';
+import { CgArrowUpO } from 'react-icons/cg';
+import ReactDOM from 'react-dom';
+import styles from './styles.module.scss';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: 'fixed',
-    zIndex: 100,
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-}));
+export default function BackToTop() {
+  const backToTopRef = useRef(null);
 
-export default function BackToTop(props) {
-  const { anchorEl } = props;
-  const classes = useStyles();
-  const trigger = useScrollTrigger({
-    target: document.getElementById('back-button') || window,
-    disableHysteresis: true,
-    threshold: 100,
-  });
+  useEffect(() => {
+    if (backToTopRef) {
+      const toggleClass = (e) => {
+        if (window.pageYOffset > 580) {
+          backToTopRef.current.classList.add(styles.scrolling);
+        } else {
+          backToTopRef.current.classList.remove(styles.scrolling);
+        }
+      };
+      document.addEventListener('scroll', toggleClass);
 
-  const handleClick = (event) => {
-    const anchor = document.getElementById(anchorEl);
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return () => document.removeEventListener('scroll', toggleClass);
     }
-  };
-  return (
-    <Zoom in={trigger}>
-      <div onClick={handleClick} role='presentation' className={classes.root}>
-        <Fab color='secondary' size='small' aria-label='scroll back to top'>
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </div>
-    </Zoom>
+  }, [backToTopRef]);
+
+  return ReactDOM.createPortal(
+    <HashLink
+      ref={backToTopRef}
+      className={styles.container}
+      to={'#top'}
+      smooth
+    >
+      <CgArrowUpO />
+    </HashLink>,
+    document.body
   );
 }
