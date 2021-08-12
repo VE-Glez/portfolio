@@ -49,6 +49,44 @@
   flex-wrap: wrap;
 }
 
+.technologies {
+  display: grid;
+  grid:
+    'title'
+    'description'
+    'cloud' / 1fr;
+  place-items: center;
+  gap: 24px;
+  padding: 16px 2vw;
+
+  h2 {
+    grid-area: title;
+  }
+
+  &__content {
+    grid-area: description;
+  }
+
+  & > div:last-child {
+    grid-area: cloud;
+  }
+
+  @media screen and (min-width: 800px) {
+    grid: 'title title' auto 'description cloud' max-content/ 1fr 1fr;
+
+    p {
+      max-width: 400px;
+    }
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 2vw;
+}
+
 .projects__container {
   display: flex;
   flex-wrap: wrap;

@@ -6,6 +6,8 @@ import PrincipleCard from '../components/PrincipleCard';
 import principles from '../data/principles';
 import { cardsInfo } from '../data/cards';
 import ProjectCard from '../components/ProjectCard/ProjectCard';
+import TextCloud from '../components/TextCloud';
+import BackToTop from '../components/BackToTop';
 
 const Home2 = () => {
   return (
@@ -34,8 +36,28 @@ const Home2 = () => {
         </div>
       </section>
 
-      <section>
+      <section className={styles.technologies}>
         <h2 id='technologies'>Tecnologías</h2>
+        <div className={styles.technologies__content}>
+          <p>
+            Desde hace 4 años he estado metido en el mundo de la
+            programación principalmente usando python para automatizar
+            tareas repetitivas en mi dia a día, matlab como herramienta de
+            análisis número para simulaciones con modelos tridimensionales.{' '}
+          </p>
+          <br />
+          <p>
+            Actualmente he estado enfocado en las tecnologías web y me
+            estoy especializando en frontend, principalmente con el uso de
+            javascript usando react como librería principal y NextJS como
+            framework.
+          </p>{' '}
+          <br />
+          <p>
+            Estas son las tecnologías que puedo utilizar hasta el momento:{' '}
+          </p>
+        </div>
+        <TextCloud />
       </section>
 
       <section className={styles.projects}>
