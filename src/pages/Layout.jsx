@@ -1,4 +1,5 @@
 import React from 'react';
+import BackToTop from '../components/BackToTop';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
@@ -11,6 +12,7 @@ function Layout({ children }) {
       </Header>
       {children}
       <Footer />
+      <BackToTop />
     </>
   );
 }
