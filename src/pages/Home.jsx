@@ -19,6 +19,7 @@ import AnimatedText from '../components/AnimatedText/AnimatedText';
 import AnimatedScrollDownIcon from '../components/AnimatedScrollDownIcon/AnimatedScrollDownIcon';
 import Diploma from '../components/Diploma/Diploma';
 import { Link } from 'react-router-dom';
+import Cylindrical from '../components/CylindricalText';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -72,6 +73,7 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
+      {/* <Cylindrical /> */}
       <Grid container justify='center' className={classes.container}>
         <Grid item xs={12} className={classes.header}>
           <Box className={classes.presentation}>

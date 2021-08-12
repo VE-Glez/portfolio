@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Certifications from './pages/Certifications';
 import Home from './pages/Home';
+import Home2 from './pages/Home2';
 import Layout from './pages/Layout';
 import NotFound from './pages/NotFound';
 import Projects from './pages/Projects';
@@ -15,8 +16,12 @@ const App = () => {
         <Layout>
           <Box style={{ minHeight: '100vh' }}>
             <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/certifications' component={Certifications} />
+              <Route exact path='/' component={Home2} />
+              <Route
+                exact
+                path='/certifications'
+                component={Certifications}
+              />
               <Route exact path='/projects' component={Projects} />
 
               <Route component={NotFound} />
