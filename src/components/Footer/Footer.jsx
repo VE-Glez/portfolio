@@ -7,8 +7,8 @@ import styles from './styles.module.scss';
 const Footer = () => {
   return (
     <footer className={styles.footer} id='contact-me'>
+      <p>Contáctame</p>
       <div className={styles.icons}>
-        <p>Contáctame</p>
         {socialNetworks.map((item) => (
           <a key={item.href} target='_blank' href={item.href}>
             <IconButton style={item.styles}>
@@ -21,9 +21,7 @@ const Footer = () => {
           </a>
         ))}
       </div>
-      <div>
-        <p>&#169; Todos los derechos reservados. 2021</p>
-      </div>
+      <p>&#169; Todos los derechos reservados. 2021</p>
     </footer>
   );
 };

@@ -8,7 +8,7 @@ import { FaDev, FaTwitter } from 'react-icons/fa';
 
 const socialNetworks = [
   {
-    styles: { '--color': '#141314', fill: '#141314' },
+    styles: { '--color': '#606060', fill: '#606060' },
     href: 'tel:+522293390918',
     icon: PhoneAndroidOutlined,
   },
