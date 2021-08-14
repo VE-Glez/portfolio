@@ -106,7 +106,7 @@ $transition-time: 0.5s;
 // podría extraerse a una variable de scss
 // para escalamiento futuro
 .innerList__active {
-  height: calc(54px * var(--size));
+  height: calc(64px * var(--size));
   transition: height $transition-time;
 }
 

@@ -25,11 +25,11 @@ const listofitems = [
         href: '/#projects',
         label: 'Proyectos',
       },
-      {
-        icon: FaAddressCard,
-        href: '/#contact-me',
-        label: 'Contáctame',
-      },
+      // {
+      //   icon: FaAddressCard,
+      //   href: '/#contact-me',
+      //   label: 'Contáctame',
+      // },
     ],
   },
   {
