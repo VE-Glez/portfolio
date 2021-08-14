@@ -13,18 +13,10 @@ const Home2 = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <img
-          loading='lazy'
-          src={me}
-          className={styles.header__image}
-          alt='my photo'
-        />
-        <div className={styles.header__text}>
-          <p>Hola, mi nombre es</p>
-          <h1>Valentín Eduardo González Morales</h1>
+        <p>Hola, mi nombre es</p>
+        <h1>Valentín Eduardo González Morales</h1>
 
-          <AnimatedText />
-        </div>
+        <AnimatedText />
       </header>
 
       <section className={styles.programming_principles}>
