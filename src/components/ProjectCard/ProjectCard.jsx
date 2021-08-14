@@ -50,6 +50,7 @@ const ProjectCard = ({
             href={linkRepo}
             variant='outlined'
             color='primary'
+            style={{ background: 'black' }}
           >
             Mirar el código
           </Button>
