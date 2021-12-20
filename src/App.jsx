@@ -26,7 +26,13 @@ const App = () => {
         <CssBaseline />
         <BrowserRouter>
           <Layout>
-            <Box style={{ minHeight: '100vh' }}>
+            <Box
+              style={{
+                minHeight: '100vh',
+                maxWidth: '100vw',
+                overflow: 'hidden',
+              }}
+            >
               <Switch>
                 <Route exact path='/' component={Home2} />
                 <Route
