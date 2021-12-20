@@ -1,6 +1,5 @@
 import { IconButton } from '@material-ui/core';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import socialNetworks from './links';
 import styles from './styles.module.scss';
 
@@ -10,7 +9,12 @@ const Footer = () => {
       <p>Contáctame</p>
       <div className={styles.icons}>
         {socialNetworks.map((item) => (
-          <a key={item.href} target='_blank' href={item.href}>
+          <a
+            key={item.href}
+            target='_blank'
+            rel='noreferrer'
+            href={item.href}
+          >
             <IconButton style={item.styles}>
               {React.createElement(item.icon, { style: item.styles })}
             </IconButton>
@@ -21,7 +25,7 @@ const Footer = () => {
           </a>
         ))}
       </div>
-      <p>&#169; Todos los derechos reservados. 2021</p>
+      <p>&#169; Hecho con Webpack y React. 2021</p>
     </footer>
   );
 };
