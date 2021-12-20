@@ -18,8 +18,15 @@ const MyNavbar = () => {
       : document.body.classList.remove('menu_active');
   }, [open]);
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     setOpen(!open);
+  };
+
+  const handleClose = (_, inner) => {
+    setOpen(false);
+    if (!inner) {
+      scrollTo(0, 0);
+    }
   };
 
   return (
@@ -34,7 +41,7 @@ const MyNavbar = () => {
               <OneItem
                 key={item.label}
                 {...item}
-                handleClose={() => setOpen(false)}
+                handleClose={handleClose}
               />
             ))}
           </nav>

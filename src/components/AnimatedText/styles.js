@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 const Paragraph = styled.p`
   display: inline-block;
@@ -11,7 +11,7 @@ const Paragraph = styled.p`
   background-size: 80%;
   background-repeat: no-repeat;
   background-clip: text;
-  font-size: 2.5em;
+  font-size: 3.5em;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   height: fit-content;

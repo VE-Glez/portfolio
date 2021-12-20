@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { animated, useSpring, to } from '@react-spring/web';
+import { animated, useSpring } from '@react-spring/web';
 import Paragraph from './styles';
 
 const AnimatedText = ({
   words = [
-    'Desarrollador frontend',
+    'Desarrollador full-stack',
     'Ingeniero mecatrónico',
     'Amante de la tecnología',
   ],
 }) => {
   const [index, setIndex] = useState(0);
   const size = words[index].length;
-  console.log('word: ', words[index].length, ' size: ', size);
   const RenderAnimatedText = animated(Paragraph);
   const { backgroundPosition, x } = useSpring({
     from: { backgroundPosition: '-500%', x: 0 },
@@ -33,8 +32,6 @@ const AnimatedText = ({
       }
     },
   });
-
-  console.log('x from spring is: ', x);
 
   return (
     <RenderAnimatedText

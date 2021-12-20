@@ -1,15 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback } from 'react';
 import TagCloud from 'TagCloud';
 const technologies = [
   'HTML',
   'CSS',
   'Javascript',
   'SCSS',
-  'lodash',
+  'Express',
   'Node',
   'Git',
   'React',
   'Python',
+  'MongoDB',
+  'Graphql',
   'Matlab',
   'Prettier',
   'Figma',
@@ -23,6 +25,7 @@ const technologies = [
   'Django',
   'Docker',
   'Firebase',
+  'Azure',
 ];
 
 const tagCloudParams = {
@@ -49,18 +52,13 @@ const tagCloudParams = {
 // });
 
 const TextCloud = () => {
-  const cloudRef = useRef(null);
-  useEffect(() => {
-    if (cloudRef) {
-      const cloud = TagCloud(
-        cloudRef.current,
-        technologies,
-        tagCloudParams
-      );
+  const cb = useCallback((node) => {
+    if (node) {
+      TagCloud(node, technologies, tagCloudParams);
     }
-  }, [cloudRef]);
+  }, []);
 
-  return <div ref={cloudRef}></div>;
+  return <div ref={cb}></div>;
 };
 
 export default TextCloud;

@@ -5,7 +5,6 @@ import Diploma from '../components/Diploma/Diploma';
 import microna from '@assets/microna.webp';
 
 const About = () => {
-  console.log(tesis);
   return (
     <div className={styles.container}>
       <header className={styles.header}>

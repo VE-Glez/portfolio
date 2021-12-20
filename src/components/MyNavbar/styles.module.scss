@@ -17,7 +17,6 @@ $transition-time: 0.5s;
 
 .wrapper {
   background-color: white;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   height: calc(100vh - 67px);
@@ -28,11 +27,6 @@ $transition-time: 0.5s;
   z-index: 10;
   width: 0;
   transition: width 0.3s;
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 .wrapper__open {
   width: 100vw;
@@ -75,7 +69,6 @@ $transition-time: 0.5s;
   flex: 1 1 auto;
   font-size: 1.2rem;
   gap: 4px;
-  // grid-area: label;
   justify-content: flex-start;
   padding-block: 12px;
   padding-inline-start: 8px;
@@ -106,7 +99,7 @@ $transition-time: 0.5s;
 // podría extraerse a una variable de scss
 // para escalamiento futuro
 .innerList__active {
-  height: calc(64px * var(--size));
+  height: calc(53px * var(--size));
   transition: height $transition-time;
 }
 
@@ -120,7 +113,6 @@ $transition-time: 0.5s;
     background: none;
     width: auto;
     height: auto;
-    overflow: hidden;
 
     footer {
       display: none;
@@ -140,6 +132,14 @@ $transition-time: 0.5s;
     margin-inline-end: 16px;
   }
 
+  .link__container {
+    position: relative;
+
+    & a {
+      padding: 12px 8px;
+    }
+  }
+
   .link__label {
     border: 0;
     padding: 0;
@@ -150,17 +150,16 @@ $transition-time: 0.5s;
   }
 
   .innerList {
-    top: 56px;
+    top: 68px;
     width: max-content;
     background: white;
     position: absolute;
-    gap: 12px;
-    grid-area: unset;
     transition: padding $transition-time;
     padding: 0;
   }
   .innerList__active {
     transition: padding $transition-time;
     padding: 12px;
+    height: calc(53px * var(--size) + 24px);
   }
 }

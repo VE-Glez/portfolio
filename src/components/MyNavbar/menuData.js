@@ -1,5 +1,5 @@
-import { FaRegFolderOpen, FaToolbox, FaAddressCard } from 'react-icons/fa';
-import { GiDiploma } from 'react-icons/gi';
+import { FaRegFolderOpen, FaToolbox, FaBookReader } from 'react-icons/fa';
+// import { GiDiploma } from 'react-icons/gi';
 import { AiFillHome } from 'react-icons/ai';
 import { GoSettings } from 'react-icons/go';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
@@ -14,6 +14,11 @@ const listofitems = [
         icon: GoSettings,
         href: '/#programmingPrinciples',
         label: 'Principios de desarrollo',
+      },
+      {
+        icon: FaBookReader,
+        href: '/#profesionalDevelopment',
+        label: 'Desarrollo profesional',
       },
       {
         icon: FaToolbox,
@@ -32,11 +37,11 @@ const listofitems = [
       // },
     ],
   },
-  {
-    icon: GiDiploma,
-    href: '/certifications',
-    label: 'Certificados',
-  },
+  // {
+  //   icon: GiDiploma,
+  //   href: '/certifications',
+  //   label: 'Certificados',
+  // },
   {
     icon: PermIdentityIcon,
     href: '/about-me',

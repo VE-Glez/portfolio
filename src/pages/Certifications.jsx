@@ -34,9 +34,9 @@ const Certifications = () => {
           <a>Platzi</a> la cual me ha ayudado a desarrollarme
           profesionalmente en el área de la tecnología, aunque no fue hasta
           inicio de este año en el que le dediqué toda mi atención a la
-          plataforma; sin duda la filosofía de Platzi de "Nunca parar de
-          aprender" me ha impulsado a continuar aprendiendo algo nuevo cada
-          día.
+          plataforma; sin duda la filosofía de Platzi de &ldquo;Nunca parar
+          de aprender&rdquo; me ha impulsado a continuar aprendiendo algo
+          nuevo cada día.
         </Typography>
         <Typography>
           Junto con los cursos que ofrece la plataforma y la ayuda de la

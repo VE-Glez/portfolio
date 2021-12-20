@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdExpandLess, MdExpandMore } from 'react-icons/md';
@@ -11,7 +11,7 @@ import { scrollIntoView } from '../../utils/scrollView';
 const OneItem = ({ href, label, icon, nested, handleClose, inner }) => {
   const [openInner, setOpenInner] = useState(false);
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     setOpenInner(!openInner);
   };
 
@@ -25,7 +25,7 @@ const OneItem = ({ href, label, icon, nested, handleClose, inner }) => {
         {inner ? (
           <HashLink
             className={styles.link__label}
-            onClick={handleClose}
+            onClick={(_) => handleClose(_, true)}
             to={href}
             scroll={scrollIntoView}
             smooth

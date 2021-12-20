@@ -1,6 +1,10 @@
-const scrollConfig = {
-  behavior: 'smooth',
-  block: 'center',
-};
+export const scrollIntoView = (el) => {
+  const headerOffset = 80;
+  const elementPosition = el.offsetTop;
+  const offsetPosition = elementPosition - headerOffset;
 
-export const scrollIntoView = (el) => el.scrollIntoView(scrollConfig);
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
+};
